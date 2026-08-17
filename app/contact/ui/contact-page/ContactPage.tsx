@@ -22,6 +22,7 @@ import {
 import {
   validateContactForm,
   type ContactFormData,
+  type ContactFormErrors,
 } from "../../utils/validate-contact-form";
 
 export function ContactPage() {
@@ -32,15 +33,39 @@ export function ContactPage() {
     message: "",
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<ContactFormErrors>({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
 
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+  const handleFieldChange = (
+    field: keyof ContactFormData,
+    value: string,
+  ) => {
+    const nextFormData = {
+      ...formData,
+      [field]: value,
+    };
+
+    setFormData(nextFormData);
+
+    if (!hasSubmitted) {
+      return;
+    }
+
+    const nextErrors = validateContactForm(nextFormData);
+
+    setErrors(nextErrors);
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    setHasSubmitted(true);
 
     const nextErrors = validateContactForm(formData);
 
@@ -65,7 +90,7 @@ export function ContactPage() {
         </Card.Header>
 
         <Card.Body>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} noValidate>
             <Stack gap="lg">
               <FormField state={errors.name ? "error" : "default"}>
                 <Label required>Tu Nombre</Label>
@@ -74,10 +99,7 @@ export function ContactPage() {
                   placeholder="Escribe tu nombre"
                   value={formData.name}
                   onChange={(event) => {
-                    setFormData((previous) => ({
-                      ...previous,
-                      name: event.target.value,
-                    }));
+                    handleFieldChange("name", event.target.value);
                   }}
                 />
 
@@ -95,10 +117,7 @@ export function ContactPage() {
                     placeholder="tu@email.com"
                     value={formData.email}
                     onChange={(event) => {
-                      setFormData((previous) => ({
-                        ...previous,
-                        email: event.target.value,
-                      }));
+                      handleFieldChange("email", event.target.value);
                     }}
                   />
 
@@ -115,10 +134,7 @@ export function ContactPage() {
                     placeholder="+569..."
                     value={formData.phone}
                     onChange={(event) => {
-                      setFormData((previous) => ({
-                        ...previous,
-                        phone: event.target.value,
-                      }));
+                      handleFieldChange("phone", event.target.value);
                     }}
                   />
 
@@ -135,10 +151,7 @@ export function ContactPage() {
                   placeholder="Escribe tu mensaje..."
                   value={formData.message}
                   onChange={(event) => {
-                    setFormData((previous) => ({
-                      ...previous,
-                      message: event.target.value,
-                    }));
+                    handleFieldChange("message", event.target.value);
                   }}
                 />
 
