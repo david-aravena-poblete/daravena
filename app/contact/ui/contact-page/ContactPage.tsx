@@ -41,6 +41,9 @@ export function ContactPage() {
   });
 
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleFieldChange = (
     field: keyof ContactFormData,
@@ -52,6 +55,14 @@ export function ContactPage() {
     };
 
     setFormData(nextFormData);
+
+    if (isSubmitted) {
+      setIsSubmitted(false);
+    }
+
+    if (submitError) {
+      setSubmitError("");
+    }
 
     if (!hasSubmitted) {
       return;
@@ -66,6 +77,8 @@ export function ContactPage() {
     event.preventDefault();
 
     setHasSubmitted(true);
+    setIsSubmitted(false);
+    setSubmitError("");
 
     const nextErrors = validateContactForm(formData);
 
@@ -76,6 +89,22 @@ export function ContactPage() {
     if (hasErrors) {
       return;
     }
+
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+
+      if (formData.name.trim().toLowerCase() === "error") {
+        setSubmitError(
+          "No pudimos enviar tu mensaje. Inténtalo nuevamente.",
+        );
+
+        return;
+      }
+
+      setIsSubmitted(true);
+    }, 1000);
   };
 
   return (
@@ -160,9 +189,35 @@ export function ContactPage() {
                 )}
               </FormField>
 
-              <Button type="submit" variant="primary" fullWidth>
-                Enviar mensaje
+              <Button
+                type="submit"
+                variant="primary"
+                fullWidth
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
               </Button>
+
+              {isSubmitted && (
+                <Text
+                  style={{
+                    color: "var(--state-success-text)",
+                    textAlign: "right",
+                  }}
+                >
+                  ✓ Mensaje enviado correctamente.
+                </Text>
+              )}
+
+              {submitError && (
+                <ErrorMessage
+                  style={{
+                    textAlign: "right",
+                  }}
+                >
+                  {submitError}
+                </ErrorMessage>
+              )}
             </Stack>
           </Form>
         </Card.Body>
