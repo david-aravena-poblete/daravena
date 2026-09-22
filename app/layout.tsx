@@ -2,6 +2,8 @@ import "@tefi/design-system/styles.css";
 
 import { DesignSystemProvider } from "@tefi/design-system";
 
+import { Navbar } from "./ui/Navbar";
+
 export default function RootLayout({
   children,
 }: {
@@ -18,6 +20,7 @@ export default function RootLayout({
           theme="dark"
           brand="default"
         >
+          <Navbar />
           {children}
         </DesignSystemProvider>
       </body>

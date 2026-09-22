@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tefi/design-system": "^0.4.31",
+    "@tefi/design-system": "^0.4.45",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

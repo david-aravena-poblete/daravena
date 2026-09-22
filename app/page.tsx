@@ -2,28 +2,24 @@
 
 import { useEffect, useState } from "react";
 
+import Link from "next/link";
+
 import {
-  Avatar,
   Box,
   Button,
   Card,
   Container,
   Grid,
   Heading,
-  Icon,
   Image,
-  Inline,
   Section,
   Stack,
-  Switch,
   Text,
+  Typewriter,
 } from "@tefi/design-system";
 
-export default function SkillsSkeletonPage() {
+export default function LandingPage() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  const isDark = theme === "dark";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,101 +31,126 @@ export default function SkillsSkeletonPage() {
     };
   }, []);
 
-  const toggleTheme = () => {
-    const nextTheme = isDark ? "light" : "dark";
-
-    setTheme(nextTheme);
-
-    document.documentElement.setAttribute(
-      "data-theme",
-      nextTheme,
-    );
-  };
-
   return (
     <>
-      <Box
-        background="gray-soft"
-        insideY="md"
-      >
-        <Container>
-          <Inline
-            align="center"
-            justify="between"
-            gap="lg"
-          >
-            <Inline
-              align="center"
-              gap="md"
-            >
-              <Avatar
-                size="lg"
-                alt="David Aravena"
-              />
-
-              <Stack gap="none">
-                <Text
-                as="h3"
-                size="sm"
-                weight="semibold">
-                  David Aravena
-                </Text>
-
-                <Text>
-                  Desarrollo de IA
-                </Text>
-              </Stack>
-            </Inline>
-
-            <Inline
-              align="center"
-              gap="sm"
-            >
-              <Button variant="secondary">
-                Contacto
-              </Button>
-
-              <Switch
-                checked={isDark}
-                thumb={
-                  <Icon
-                    name={isDark ? "moon" : "sun"}
-                    size="md"
-                  />
-                }
-                onChange={toggleTheme}
-              />
-            </Inline>
-          </Inline>
-        </Container>
-      </Box>
+      {/* ======================================
+         INTRO
+      ====================================== */}
 
       <Section>
         <Container>
           <Stack>
             <Heading
               as="h1"
-              size="lg"
+              size="2xl"
             >
-              Servicios de Inteligencia Artificial
+              Frontend developer potenciado con inteligencia artificial
             </Heading>
-
-            <Text>
-              Desarrollo soluciones para integrar inteligencia artificial en
-              proyectos reales mediante metodologías, entrenamiento de modelos
-              y desarrollo de herramientas especializadas.
-            </Text>
+              <Typewriter
+                text="Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web. Transformo tus ideas en interfaces web, dirigiendo a una inteligencia artificial con mi criterio tecnico."
+                icon="bot"
+              />
+        
           </Stack>
+
+          {/* ======================================
+             SERVICES
+          ====================================== */}
 
           <Section>
             <Grid>
+              {/* ======================================
+                 PROMPT ENGINEERING
+              ====================================== */}
+
               <Card>
                 <Card.Media>
                   <Image
-                    src="https://images.unsplash.com/photo-1658243762577-d781c4726412?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
+                    src="/images/frontend-developer.jpeg"
+                    alt="Ingeniería de prompts"
+                    aspect="4:3"
+                  />
+                </Card.Media>
+
+                <Card.Body>
+                  <Stack>
+                    <Heading
+                      as="h3"
+                      size="xl"
+                      lines={2}
+                    >
+                      Soy Frontend developer
+                    </Heading>
+
+                    <Text
+                      expandable
+                      lines={4}
+                    >
+                      Dirijo a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles. De esta forma construyo y mantengo interfaces de usuario respetando criterios y buenas practicas de las tecnologias frontend.
+                    </Text>
+                  </Stack>
+                </Card.Body>
+
+                <Card.Footer>
+                  <Link href="/markdown-test">
+                    <Button fullWidth>
+                      Ver ejemplos
+                    </Button>
+                  </Link>
+                </Card.Footer>
+              </Card>
+
+              {/* ======================================
+                 FRONTEND DEVELOPER
+              ====================================== */}
+
+              <Card>
+                <Card.Media>
+                  <Image
+                    src="/images/frontend-code.jpeg"
+                    alt="Frontend developer"
+                    aspect="4:3"
+                  />
+                </Card.Media>
+
+                <Card.Body>
+                  <Stack>
+                    <Heading
+                      as="h3"
+                      size="xl"
+                      lines={2}
+                    >
+                      Hago testing de codigo
+                    </Heading>
+
+                    <Text
+                      expandable
+                      lines={4}
+                    >
+                      Dirijo a la inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente al navegar por la página web.
+                    </Text>
+                  </Stack>
+                </Card.Body>
+
+                <Card.Footer>
+                  <Link href="/markdown-test">
+                    <Button fullWidth>
+                      Ver ejemplos
+                    </Button>
+                  </Link>
+                </Card.Footer>
+              </Card>
+
+              {/* ======================================
+                 SPEC DRIVEN DEVELOPMENT
+              ====================================== */}
+
+              <Card>
+                <Card.Media>
+                  <Image
+                    src="/images/spec-driven-development.jpeg"
                     alt="Spec Driven Development"
-                    aspect="16:9"
-                    skeleton={loading}
+                    aspect="4:3"
                   />
                 </Card.Media>
 
@@ -137,121 +158,27 @@ export default function SkillsSkeletonPage() {
                   <Stack>
                     <Heading
                       as="h3"
-                      skeleton={loading}
+                      size="xl"
+                      lines={2}
                     >
-                      Spec Driven DV
+                      Desarrollo y organizo contexto
                     </Heading>
 
                     <Text
                       expandable
                       lines={4}
-                      skeleton={loading}
                     >
-                      Documento y organizo toda la información de tu proyecto
-                      para que una IA la use como memoria de largo plazo. Así
-                      podrá trabajar todos los días bajo los mismos criterios,
-                      prácticas, ideas y decisiones. Técnicamente, estructuro y
-                      desarrollo contexto para inteligencia artificial mediante
-                      la metodología Spec-Driven Development.
+                      Escribo, estructuro y suministro la informacion que necesita un modelo de inteligencia artificial para que aprenda tus necesidades, tu forma de trabajar y las limitaciones que debe considerar.
                     </Text>
                   </Stack>
                 </Card.Body>
 
                 <Card.Footer>
-                  <Button
-                    fullWidth
-                    skeleton={loading}
-                  >
-                    Contáctame
-                  </Button>
-                </Card.Footer>
-              </Card>
-
-              <Card>
-                <Card.Media>
-                  <Image
-                    src="https://images.unsplash.com/photo-1658243762588-bbe78d88f4aa?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
-                    alt="Fine Tuning"
-                    aspect="16:9"
-                    skeleton={loading}
-                  />
-                </Card.Media>
-
-                <Card.Body>
-                  <Stack>
-                    <Heading
-                      as="h3"
-                      skeleton={loading}
-                    >
-                      Fine Tuning
-                    </Heading>
-
-                    <Text
-                      expandable
-                      lines={4}
-                      skeleton={loading}
-                    >
-                      El Fine-Tuning me permite enseñarle a una IA las
-                      distintas situaciones que pueden producirse en tu
-                      proyecto para que sea capaz de reconocer intenciones,
-                      razonar y ejecutar acciones o utilizar software según el
-                      contexto. Técnicamente, preparo ejemplos de tus tareas y
-                      métodos de trabajo para enseñárselos a una IA, de modo
-                      que aprenda los patrones detrás de tus decisiones y pueda
-                      reproducirlos de forma consistente en situaciones
-                      similares.
-                    </Text>
-                  </Stack>
-                </Card.Body>
-
-                <Card.Footer>
-                  <Button
-                    fullWidth
-                    skeleton={loading}
-                  >
-                    Contáctame
-                  </Button>
-                </Card.Footer>
-              </Card>
-
-              <Card>
-                <Card.Media>
-                  <Image
-                    src="https://images.unsplash.com/photo-1658243766433-0144532e850c?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
-                    alt="Desarrollo de Skills"
-                    aspect="16:9"
-                    skeleton={loading}
-                  />
-                </Card.Media>
-
-                <Card.Body>
-                  <Stack>
-                    <Heading
-                      as="h3"
-                      skeleton={loading}
-                    >
-                      Desarrollo de Skills
-                    </Heading>
-
-                    <Text
-                      expandable
-                      lines={4}
-                      skeleton={loading}
-                    >
-                      Desarrollo skills para que una inteligencia artificial
-                      pueda utilizar archivos, código de programación y
-                      procesos específicos para resolver tareas concretas.
-                    </Text>
-                  </Stack>
-                </Card.Body>
-
-                <Card.Footer>
-                  <Button
-                    fullWidth
-                    skeleton={loading}
-                  >
-                    Contáctame
-                  </Button>
+                  <Link href="/markdown-test">
+                    <Button fullWidth>
+                      Ver ejemplos
+                    </Button>
+                  </Link>
                 </Card.Footer>
               </Card>
             </Grid>
