@@ -127,10 +127,34 @@ export function ContactPage() {
   };
 
   /* ======================================
+     RESET
+  ====================================== */
+
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      contactMethod: "email",
+      email: "",
+      phone: "",
+      message: "",
+    });
+
+    setErrors({
+      name: "",
+      contactMethod: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+
+    setHasSubmitted(false);
+  };
+
+  /* ======================================
      SUBMIT
   ====================================== */
 
-  const handleSubmit = (
+  const handleSubmit = async (
     event: FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
@@ -153,22 +177,43 @@ export function ContactPage() {
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch(
+        "/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
 
-      if (
-        formData.name.trim().toLowerCase() ===
-        "error"
-      ) {
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (data.errors) {
+          setErrors(data.errors);
+          return;
+        }
+
         setSubmitError(
-          "No pudimos enviar tu mensaje. Inténtalo nuevamente.",
+          data.message ??
+            "No pudimos enviar tu mensaje. Inténtalo nuevamente.",
         );
 
         return;
       }
 
       setIsSubmitted(true);
-    }, 1000);
+      resetForm();
+    } catch {
+      setSubmitError(
+        "Error de conexión. Verifica tu internet e inténtalo nuevamente.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   /* ======================================
