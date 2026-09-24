@@ -15,11 +15,11 @@ const resend = new Resend(
 );
 
 const RECIPIENT_EMAIL =
-  process.env.CONTACT_RECIPIENT_EMAIL ??
+  process.env.RESEND_RECIPIENT_EMAIL ??
   "tu-email@ejemplo.com";
 
 const FROM_EMAIL =
-  process.env.CONTACT_FROM_EMAIL ??
+  process.env.RESEND_FROM_EMAIL ??
   "onboarding@resend.dev";
 
 /* ======================================
