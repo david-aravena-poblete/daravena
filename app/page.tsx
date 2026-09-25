@@ -47,7 +47,7 @@ export default function LandingPage() {
               Frontend developer potenciado con inteligencia artificial
             </Heading>
               <Typewriter
-                text="Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web. Transformo tus ideas en interfaces web, dirigiendo a una inteligencia artificial con mi criterio tecnico."
+                text="Con mi criterio tecnico dirijo a una inteligencia artificial para transformar tus ideas en interfaces web. Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web."
                 icon="bot"
               />
         
