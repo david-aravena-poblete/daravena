@@ -195,7 +195,7 @@ export default function MarkdownTestPage() {
           </Heading>
 
           <Text>
-            Ya no escribo codigo. Ahora escribo contexto. Desarrollo y mantengo cada indicacion o idea que la IA debe mantener en su memoria mientras dure la sesion en la que trabajas con ella. Cada aspecto de la pagina web que se pueda describir con palabras, lo documento dandole un formato o estructura que le facilite a una ia aprenderlo.
+            Desarrollo, organizo y documento cada pieza de tu interfaz de usuario para que una inteligencia artificial la entienda desde lo micro hasta lo macro. De esta forma cualquier modificación o búsqueda de defectos en la interfaz se puede hacer en tiempo récord. 
           </Text>
         </Stack>
 
