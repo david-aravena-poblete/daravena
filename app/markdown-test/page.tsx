@@ -203,11 +203,11 @@ export default function MarkdownTestPage() {
           <Card>
             <Card.Header>
               <Heading>
-                Proyecto Timeline
+                Timeline
               </Heading>
 
-              <Text>
-                Este es el contexto necesario para crear un componente el cual muestre mi historia profesional atravez de un slider con el cual puedo elegir el año del que quiero saber su informacion.
+              <Text>                
+Timeline es una funcionalidad que sirve para mostrar información en orden cronológico, para que un usuario lo pueda consultar de una manera interactiva.
               </Text>
             </Card.Header>
 
