@@ -18,28 +18,38 @@ import {
 } from "@tefi/design-system";
 
 const markdown1 = `
+# Vista: Timeline Interactivo
+Documentación técnica y funcional basada en la metodología de 5 niveles.
+
+================================================================================
+# BLOQUE 1: CONTROL Y NAVEGACIÓN TEMPORAL
+================================================================================
+
 ## Funcionalidad 1: Control Deslizante del Timeline (Slider)
-**Nivel 1: Requerimiento del Cliente**
-Al mover el elemento a la derecha se avanza en la vida de David Aravena y al mover el elemento hacia la izquierda se va a los años anteriores. Al cambiar de época en el timeline debe cambiar el contenido.
 
-**Nivel 2: Especificación de Usuario**
-Al hacer clic y arrastrar el indicador del timeline horizontal, la imagen y el texto principal se actualizan instantáneamente para mostrar la historia de ese año específico. La interacción debe sentirse fluida.
+### Nivel 1: Requerimiento del Cliente
+Necesito una vista en la que el usuario deslice un control hacia la derecha o izquierda para avanzar o retroceder en los años del timeline, con la intención de actualizar el contenido que muestra la vista correspondiente.
 
-**Nivel 3: Especificación Técnica**
-* **Componente:** Se requiere un componente \`TimelineSlider\` que contenga un \`<input type="range">\`. 
-* **Estado:** Su evento \`onChange\` modificará un estado local llamado \`selectedYear\` (creado con el hook \`useState\`).
-* **Arquitectura:** Este estado estará alojado en el componente padre \`TimelineView\`. Se hará en React puro, sin TypeScript.
+### Nivel 2: Especificación de Usuario
+> **Como** visitante del sitio web,  
+> **quiero** hacer clic o arrastrar un indicador a lo largo de una línea de tiempo horizontal,  
+> **para** explorar cronológicamente la historia de David Aravena viendo cómo se actualizan al instante las fotos y los textos según el año seleccionado.
 
-**Nivel 4: Flujo**
+### Nivel 3: Especificación Técnica
+* **Componente:** \`TimelineSlider\` que implementa un elemento nativo \`<input type="range">\`.
+* **Estado:** Hook \`useState\` para controlar \`selectedYear\`.
+* **Arquitectura:** El estado se aloja en el componente contenedor \`TimelineView\`. Desarrollo en React puro (JavaScript JSX, sin TypeScript).
+
+### Nivel 4: Flujo
 1. El usuario arrastra el control del \`<input type="range">\`.
-2. Esa acción dispara el evento \`onChange\`.
-3. Una función manejadora captura la información de esa acción extrayendo el valor (\`evento.target.value\`).
-4. La función convierte ese valor a un formato de número entero.
-5. Se envía ese número a la función \`setSelectedYear()\` para actualizar el estado.
-6. React detecta el cambio, vuelve a renderizar, filtra la información por el nuevo año y la envía al componente visual para que actualice la pantalla.
+2. La acción dispara el evento nativo \`onChange\`.
+3. La función manejadora captura el valor mediante \`evento.target.value\`.
+4. Se convierte el valor capturado a número entero.
+5. Se invoca \`setSelectedYear(nuevoAño)\` para actualizar el estado del contenedor.
+6. React detecta la mutación de estado, re-renderiza, filtra la información por el año correspondiente y propaga los datos actualizados a la interfaz.
 
-**Nivel 5: Pseudocódigo**
-\'\'\'text
+### Nivel 5: Pseudocódigo
+\`\`\`text
 Definir funcion handleYearChange(evento):
     nuevoAño = convertir_a_numero(evento.target.value)
     setSelectedYear(nuevoAño)
@@ -50,34 +60,40 @@ Definir funcion handleYearChange(evento):
     value={selectedYear} 
     onChange={handleYearChange} 
 />
-\'\'\'
+\`\`\`
 
+
+================================================================================
+# BLOQUE 2: RENDERIZADO Y PRESENTACIÓN DINÁMICA
+================================================================================
 
 ## Funcionalidad 2: Actualización del Contenido (Galería de Imágenes y Texto)
 
-**Nivel 1: Requerimiento del Cliente**
+### Nivel 1: Requerimiento del Cliente
 Cada vez que se seleccione una época distinta en el timeline, la sección inferior de la pantalla debe actualizarse de forma automática e inmediata para mostrar la información correspondiente a ese año de la vida de David Aravena. Esta sección debe incluir fotografías y texto narrativo.
 
-**Nivel 2: Especificación de Usuario**
-Como lector del blog, cuando suelto el control del timeline en un año nuevo, quiero ver que las imágenes y la historia cambian al instante. Las fotografías deben verse ordenadas (como una galería o cuadrícula a un lado) y al otro lado el texto debe ser fácil de leer.
+### Nivel 2: Especificación de Usuario
+> **Como** visitante del sitio web,  
+> **quiero** ver que las imágenes y la historia cambian al instante al seleccionar o soltar un año en el timeline,  
+> **para** explorar el relato de esa época con las fotos organizadas en una galería a un lado y el texto explicativo al otro de manera clara y ordenada.
 
-**Nivel 3: Especificación Técnica**
-* **Componente:** Se creará un componente funcional llamado \`EraContent.jsx\`.
-* **Props:** Recibirá una prop llamada \`datosEpoca\` con la estructura: \`{ year, title, content, images: [] }\`. 
-* **Estructura de Datos:** El campo de imágenes será un arreglo de URLs en el archivo \`timelineData.js\` para renderizar múltiples fotos.
-* **Arquitectura Visual:** El componente utilizará flexbox o CSS Grid para dividir la vista en dos columnas: una para el mapeo iterativo de imágenes y otra para la inyección de texto.
+### Nivel 3: Especificación Técnica
+* **Componente:** Componente funcional \`EraContent.jsx\`.
+* **Props:** Recibe la prop \`datosEpoca\` con el formato \`{ year, title, content, images: [] }\`.
+* **Estructura de Datos:** Colección de URLs en el archivo local \`timelineData.js\` para renderizar múltiples fotos.
+* **Arquitectura Visual:** Distribución mediante CSS Grid o Flexbox en dos columnas: una para el mapeo iterativo de imágenes y otra para la inyección de texto.
 
-**Nivel 4: Flujo**
+### Nivel 4: Flujo
 1. El estado \`selectedYear\` en el componente padre (\`TimelineView\`) cambia debido a la interacción del usuario con el slider.
-2. El componente padre busca en la base de datos local (\`timelineData.js\`) el objeto de la historia que coincide con el nuevo año.
+2. El componente padre busca en la colección local (\`timelineData.js\`) el objeto de la historia que coincide con el nuevo año.
 3. El componente padre inyecta este nuevo objeto a través de la prop \`datosEpoca\` hacia el componente hijo \`EraContent\`.
 4. \`EraContent\` recibe las nuevas props e inicia el re-renderizado.
 5. Toma el arreglo \`datosEpoca.images\` y ejecuta un método \`.map()\` para generar un elemento \`<img>\` en el DOM por cada fotografía.
 6. Toma los strings \`datosEpoca.title\` y \`datosEpoca.content\` y reemplaza el texto de los nodos HTML correspondientes (\`<h2>\` y \`<p>\`).
 7. El navegador actualiza la pantalla.
 
-**Nivel 5: Pseudocódigo**
-\'\'\'text
+### Nivel 5: Pseudocódigo
+\`\`\`text
 Componente EraContent (recibe props: datosEpoca):
 
     Si datosEpoca es nulo o indefinido:
@@ -101,23 +117,10 @@ Componente EraContent (recibe props: datosEpoca):
                 Titulo_Principal: (texto = datosEpoca.title)
                 Parrafo_Historia: (texto = datosEpoca.content)
     )
-\'\'\'
+\`\`\`
 `;
 
-const markdown2 = `
-# Uso de Tefi Design System
-
-Este documento contiene las reglas generales para utilizar los componentes y capacidades del sistema de diseño.
-
-## Componentes
-
-Los componentes deben mantener una responsabilidad clara y favorecer la composición.
-
-- Layout
-- Surface
-- Typography
-- Interaction
-`;
+const markdown2 = ``;
 
 function MarkdownFileLabel() {
   return (
@@ -191,11 +194,11 @@ export default function MarkdownTestPage() {
       <Stack gap="md">
         <Stack gap="xs">
           <Heading>
-            Documentación del proyecto
+            Mi trabajo como frontend
           </Heading>
 
           <Text>
-            Ya no escribo codigo. Ahora escribo contexto. Desarrollo y mantengo cada indicacion o idea que la IA debe mantener en su memoria mientras dure la sesion en la que trabajas con ella. Cada aspecto de la pagina web que se pueda describir con palabras, lo documento dandole un formato o estructura que le facilite a una ia aprenderlo.
+            Yo no escribo codigo. Escribo contexto. Puedo dirigir a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles, construyendo y manteniendo las indicaciones e ideas clave que el modelo debe conservar en su memoria mientras trabajo con ella.
           </Text>
         </Stack>
 
@@ -207,7 +210,7 @@ export default function MarkdownTestPage() {
               </Heading>
 
               <Text>
-                Este es el contexto necesario para crear un componente el cual muestre mi historia profesional atravez de un slider con el cual puedo elegir el año del que quiero saber su informacion.
+              Este es el contexto necesario para que una IA pueda generar una línea de tiempo interactiva que muestra informacion correspondiente a la fecha (año) seleccionada por el usuario.
               </Text>
             </Card.Header>
 
@@ -221,11 +224,11 @@ export default function MarkdownTestPage() {
           <Card>
             <Card.Header>
               <Heading>
-                Uso de Tefi Design System
+                Proyecto Tefi Design System
               </Heading>
 
               <Text>
-                Documentación sobre el uso de los componentes y capacidades del sistema de diseño.
+                Este es el contexto necesario para que una IA pueda dar diseño (color y forma) a una pagina web haciendo uso de una configuracion diseñada a pedido por el cliente.
               </Text>
             </Card.Header>
 

@@ -133,7 +133,7 @@ export default function LandingPage() {
                 </Card.Body>
 
                 <Card.Footer>
-                  <Link href="/markdown-test">
+                  <Link href="/testing">
                     <Button fullWidth>
                       Ver ejemplos
                     </Button>
@@ -174,7 +174,7 @@ export default function LandingPage() {
                 </Card.Body>
 
                 <Card.Footer>
-                  <Link href="/markdown-test">
+                  <Link href="/contexto">
                     <Button fullWidth>
                       Ver ejemplos
                     </Button>
