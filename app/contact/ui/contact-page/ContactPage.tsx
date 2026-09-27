@@ -31,26 +31,35 @@ import {
 export function ContactPage() {
   const router = useRouter();
 
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
-    contactMethod: "email",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const [formData, setFormData] =
+    useState<ContactFormData>({
+      name: "",
+      contactMethod: "email",
+      email: "",
+      phone: "",
+      message: "",
+    });
 
-  const [errors, setErrors] = useState<ContactFormErrors>({
-    name: "",
-    contactMethod: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const [errors, setErrors] =
+    useState<ContactFormErrors>({
+      name: "",
+      contactMethod: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
 
-  const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState("");
+  const [hasSubmitted, setHasSubmitted] =
+    useState(false);
+
+  const [isSubmitting, setIsSubmitting] =
+    useState(false);
+
+  const [isSubmitted, setIsSubmitted] =
+    useState(false);
+
+  const [submitError, setSubmitError] =
+    useState("");
 
   /* ======================================
      FIELD CHANGE
@@ -159,6 +168,7 @@ export function ContactPage() {
   ====================================== */
 
   const handleClose = () => {
+    setIsSubmitted(false);
     router.push("/");
   };
 
@@ -217,8 +227,8 @@ export function ContactPage() {
         return;
       }
 
-      setIsSubmitted(true);
       resetForm();
+      setIsSubmitted(true);
     } catch {
       setSubmitError(
         "Error de conexión. Verifica tu internet e inténtalo nuevamente.",
@@ -248,10 +258,6 @@ export function ContactPage() {
                 </Text>
               </Stack>
             </Card.Header>
-
-            {/* ======================================
-               BODY
-            ====================================== */}
 
             <Card.Body>
               <Form
@@ -326,7 +332,7 @@ export function ContactPage() {
                     )}
                   </FormField>
 
-                  {/* CONTACT FIELD */}
+                  {/* EMAIL */}
 
                   {formData.contactMethod ===
                     "email" && (
@@ -360,6 +366,8 @@ export function ContactPage() {
                       )}
                     </FormField>
                   )}
+
+                  {/* PHONE */}
 
                   {formData.contactMethod ===
                     "phone" && (
@@ -431,11 +439,9 @@ export function ContactPage() {
                     type="submit"
                     variant="primary"
                     fullWidth
-                    disabled={isSubmitting}
+                    loading={isSubmitting}
                   >
-                    {isSubmitting
-                      ? "Enviando..."
-                      : "Enviar mensaje"}
+                    Enviar mensaje
                   </Button>
 
                   {/* ERROR */}
@@ -449,7 +455,6 @@ export function ContactPage() {
                       {submitError}
                     </ErrorMessage>
                   )}
-
                 </Stack>
               </Form>
             </Card.Body>
@@ -465,20 +470,32 @@ export function ContactPage() {
         open={isSubmitted}
         onClose={handleClose}
         closeOnOverlayClick={false}
+        closeOnEscape={false}
       >
-        <Stack gap="lg">
-          <Heading>
-            Mensaje enviado
-          </Heading>
+        <Container size="sm">
+          <Card>
+            <Card.Header>
+              <Heading>
+                Mensaje enviado
+              </Heading>
+            </Card.Header>
 
-          <Text>
-            Tu mensaje fue enviado correctamente.
-          </Text>
+            <Card.Body>
+              <Stack gap="md">
+                <Text>
+                  Tu mensaje fue enviado correctamente.
+                </Text>
 
-          <Button onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Stack>
+                <Button
+                  onClick={handleClose}
+                  fullWidth
+                >
+                  Cerrar
+                </Button>
+              </Stack>
+            </Card.Body>
+          </Card>
+        </Container>
       </Modal>
     </>
   );

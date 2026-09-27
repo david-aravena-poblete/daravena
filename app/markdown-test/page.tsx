@@ -18,9 +18,6 @@ import {
 } from "@tefi/design-system";
 
 const markdown1 = `
-# Vista: Timeline Interactivo
-Documentación técnica y funcional basada en la metodología de 5 niveles.
-
 ================================================================================
 # BLOQUE 1: CONTROL Y NAVEGACIÓN TEMPORAL
 ================================================================================
@@ -198,7 +195,7 @@ export default function MarkdownTestPage() {
           </Heading>
 
           <Text>
-            Yo no escribo codigo. Escribo contexto. Puedo dirigir a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles, construyendo y manteniendo las indicaciones e ideas clave que el modelo debe conservar en su memoria mientras trabajo con ella.
+            Yo no escribo codigo. Escribo contexto. Puedo dirigir a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles.
           </Text>
         </Stack>
 
