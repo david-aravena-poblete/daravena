@@ -167,7 +167,7 @@ function MarkdownCard({
   );
 }
 
-export default function MarkdownTestPage() {
+export default function FrontendPage() {
   const router = useRouter();
 
   return (
