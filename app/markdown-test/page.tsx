@@ -19,25 +19,23 @@ import {
 
 const markdown1 = `
 ================================================================================
-# BLOQUE 1: CONTROL Y NAVEGACIÓN TEMPORAL
+# Funcionalidad 1: Control Deslizante del Timeline (Slider)
 ================================================================================
 
-## Funcionalidad 1: Control Deslizante del Timeline (Slider)
-
-### Nivel 1: Requerimiento del Cliente
+## Nivel 1: Requerimiento del Cliente
 Necesito una vista en la que el usuario deslice un control hacia la derecha o izquierda para avanzar o retroceder en los años del timeline, con la intención de actualizar el contenido que muestra la vista correspondiente.
 
-### Nivel 2: Especificación de Usuario
+## Nivel 2: Especificación de Usuario
 > **Como** visitante del sitio web,  
 > **quiero** hacer clic o arrastrar un indicador a lo largo de una línea de tiempo horizontal,  
 > **para** explorar cronológicamente la historia de David Aravena viendo cómo se actualizan al instante las fotos y los textos según el año seleccionado.
 
-### Nivel 3: Especificación Técnica
+## Nivel 3: Especificación Técnica
 * **Componente:** \`TimelineSlider\` que implementa un elemento nativo \`<input type="range">\`.
 * **Estado:** Hook \`useState\` para controlar \`selectedYear\`.
 * **Arquitectura:** El estado se aloja en el componente contenedor \`TimelineView\`. Desarrollo en React puro (JavaScript JSX, sin TypeScript).
 
-### Nivel 4: Flujo
+## Nivel 4: Flujo
 1. El usuario arrastra el control del \`<input type="range">\`.
 2. La acción dispara el evento nativo \`onChange\`.
 3. La función manejadora captura el valor mediante \`evento.target.value\`.
@@ -45,7 +43,7 @@ Necesito una vista en la que el usuario deslice un control hacia la derecha o iz
 5. Se invoca \`setSelectedYear(nuevoAño)\` para actualizar el estado del contenedor.
 6. React detecta la mutación de estado, re-renderiza, filtra la información por el año correspondiente y propaga los datos actualizados a la interfaz.
 
-### Nivel 5: Pseudocódigo
+## Nivel 5: Pseudocódigo
 \`\`\`text
 Definir funcion handleYearChange(evento):
     nuevoAño = convertir_a_numero(evento.target.value)
@@ -61,26 +59,24 @@ Definir funcion handleYearChange(evento):
 
 
 ================================================================================
-# BLOQUE 2: RENDERIZADO Y PRESENTACIÓN DINÁMICA
+# Funcionalidad 2: Actualización del Contenido (Galería de Imágenes y Texto)
 ================================================================================
 
-## Funcionalidad 2: Actualización del Contenido (Galería de Imágenes y Texto)
-
-### Nivel 1: Requerimiento del Cliente
+## Nivel 1: Requerimiento del Cliente
 Cada vez que se seleccione una época distinta en el timeline, la sección inferior de la pantalla debe actualizarse de forma automática e inmediata para mostrar la información correspondiente a ese año de la vida de David Aravena. Esta sección debe incluir fotografías y texto narrativo.
 
-### Nivel 2: Especificación de Usuario
+## Nivel 2: Especificación de Usuario
 > **Como** visitante del sitio web,  
 > **quiero** ver que las imágenes y la historia cambian al instante al seleccionar o soltar un año en el timeline,  
 > **para** explorar el relato de esa época con las fotos organizadas en una galería a un lado y el texto explicativo al otro de manera clara y ordenada.
 
-### Nivel 3: Especificación Técnica
+## Nivel 3: Especificación Técnica
 * **Componente:** Componente funcional \`EraContent.jsx\`.
 * **Props:** Recibe la prop \`datosEpoca\` con el formato \`{ year, title, content, images: [] }\`.
 * **Estructura de Datos:** Colección de URLs en el archivo local \`timelineData.js\` para renderizar múltiples fotos.
 * **Arquitectura Visual:** Distribución mediante CSS Grid o Flexbox en dos columnas: una para el mapeo iterativo de imágenes y otra para la inyección de texto.
 
-### Nivel 4: Flujo
+## Nivel 4: Flujo
 1. El estado \`selectedYear\` en el componente padre (\`TimelineView\`) cambia debido a la interacción del usuario con el slider.
 2. El componente padre busca en la colección local (\`timelineData.js\`) el objeto de la historia que coincide con el nuevo año.
 3. El componente padre inyecta este nuevo objeto a través de la prop \`datosEpoca\` hacia el componente hijo \`EraContent\`.
@@ -89,7 +85,7 @@ Cada vez que se seleccione una época distinta en el timeline, la sección infer
 6. Toma los strings \`datosEpoca.title\` y \`datosEpoca.content\` y reemplaza el texto de los nodos HTML correspondientes (\`<h2>\` y \`<p>\`).
 7. El navegador actualiza la pantalla.
 
-### Nivel 5: Pseudocódigo
+## Nivel 5: Pseudocódigo
 \`\`\`text
 Componente EraContent (recibe props: datosEpoca):
 
@@ -207,7 +203,7 @@ export default function MarkdownTestPage() {
               </Heading>
 
               <Text>
-              Este es el contexto necesario para que una IA pueda generar una línea de tiempo interactiva que muestra informacion correspondiente a la fecha (año) seleccionada por el usuario.
+              Este contexto tiene los 5 niveles necesarios para que una IA pueda generar una línea de tiempo interactiva que muestra informacion correspondiente a la fecha (año) seleccionada por el usuario.
               </Text>
             </Card.Header>
 
