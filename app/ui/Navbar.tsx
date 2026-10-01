@@ -24,15 +24,28 @@ export function Navbar() {
     const nextTheme = isDark ? "light" : "dark";
 
     setTheme(nextTheme);
-    document.documentElement.setAttribute("data-theme", nextTheme);
+    document.documentElement.setAttribute(
+      "data-theme",
+      nextTheme,
+    );
   };
 
   return (
-    <Box background="surface-secondary" insideY="md">
+    <Box
+      background="surface-secondary"
+      insideY="md"
+    >
       <Container>
-        <Inline align="center" justify="between" gap="lg">
+        <Inline
+          align="center"
+          justify="between"
+          gap="lg"
+        >
           <Link href="/">
-            <Inline align="center" gap="md">
+            <Inline
+              align="center"
+              gap="md"
+            >
               <Avatar
                 size="lg"
                 alt="David Aravena"
@@ -40,18 +53,29 @@ export function Navbar() {
               />
 
               <Stack gap="none">
-                <Text as="h1" size="lg" weight="semibold">
+                <Text
+                  as="h1"
+                  size="lg"
+                  weight="semibold"
+                >
                   David Aravena
                 </Text>
 
-                <Text>Frontend developer</Text>
+                <Text>
+                  Frontend developer
+                </Text>
               </Stack>
             </Inline>
           </Link>
 
-          <Inline align="center" gap="sm">
+          <Inline
+            align="center"
+            gap="sm"
+          >
             <Link href="/contact">
-              <Button variant="secondary">Contacto</Button>
+              <Button variant="secondary">
+                Contacto
+              </Button>
             </Link>
 
             <Switch
@@ -59,7 +83,11 @@ export function Navbar() {
               checked={isDark}
               thumb={
                 <Icon
-                  name={isDark ? "moon" : "sun"}
+                  name={
+                    isDark
+                      ? "moon"
+                      : "sun"
+                  }
                   size="lg"
                 />
               }
