@@ -191,7 +191,7 @@ export default function FrontendPage() {
           </Heading>
 
           <Text>
-            Yo no escribo codigo. Escribo contexto. Puedo dirigir a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles.
+            Yo no escribo codigo. Escribo contexto. Puedo dirigir a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles para que sea capaz de construir y mantener una interfaz web diseñada para resolver una parte de tu proyecto o negocio.
           </Text>
         </Stack>
 

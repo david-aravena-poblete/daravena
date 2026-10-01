@@ -47,7 +47,7 @@ export default function LandingPage() {
               Frontend developer potenciado con inteligencia artificial
             </Heading>
               <Typewriter
-                text="Con mi criterio tecnico dirijo a una inteligencia artificial para transformar tus ideas en interfaces web. Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web."
+                text="Con mi criterio tecnico dirijo a una inteligencia artificial para transformar las distintas partes de tu proyecto o negocio, en interfaces web. Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web."
                 icon="bot"
               />
         
@@ -86,7 +86,7 @@ export default function LandingPage() {
                       expandable
                       lines={4}
                     >
-                      Dirijo a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles. De esta forma construyo y mantengo interfaces de usuario respetando criterios y buenas practicas de las tecnologias frontend.
+                      Dirijo a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles. De esta forma construyo y mantengo interfaces web respetando criterios y buenas practicas de las tecnologias frontend.
                     </Text>
                   </Stack>
                 </Card.Body>
@@ -127,7 +127,7 @@ export default function LandingPage() {
                       expandable
                       lines={4}
                     >
-                      Dirijo a la inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente al navegar por la página web.
+                      Dirijo a una inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente al navegar por la interfaz web.
                     </Text>
                   </Stack>
                 </Card.Body>
@@ -168,7 +168,7 @@ export default function LandingPage() {
                       expandable
                       lines={4}
                     >
-                      Escribo, estructuro y suministro la informacion que necesita un modelo de inteligencia artificial para que aprenda tus necesidades, tu forma de trabajar y las limitaciones que debe considerar.
+                      Escribo, estructuro y suministro la informacion que necesita un modelo de inteligencia artificial, para que sea capaz de generar y mantener una interfaz web acorde a las necesidades de tu proyecto.
                     </Text>
                   </Stack>
                 </Card.Body>
