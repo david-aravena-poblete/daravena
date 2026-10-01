@@ -17,15 +17,15 @@ import {
   Text,
 } from "@tefi/design-system";
 
-const markdown1 = `# QA & Testing Context: Desarrollo Frontend Potenciado con Inteligencia Artificial
+const markdown1 = `# QA & Testing: Desarrollo Frontend Potenciado con Inteligencia Artificial
 
 ## 1. Propósito central del testing
 
-Garantizar que la mayoria de defectos no lleguen a producción. Los defectos detectados se previenen y resuelven en fases tempranas.
+Detectar la mayor cantidad de defectos que puedan existir en el codigo, para que los usuarios de tu interfaz web no los experimenten. Los defectos detectados se previenen y resuelven antes de publicar la interfaz para usuarios o clientes.
 
-### El Rol de la Inteligencia Artificial
+### Mi rol como programador
 
-Mi rol es dirigir a la IA bajo criterios estrictos de testing, asegurando que cada caso de prueba refleje casos de uso reales, proteja la experiencia de usuario y valide las interacciones complejas con backends serverless (Firebase/Supabase).
+Mi rol es dirigir a la IA bajo criterios estrictos de testing, asegurando que cada prueba refleje un caso de uso real de tu proyecto.
 
 ## 2. Stack Tecnológico de Calidad
 
@@ -33,7 +33,7 @@ Mi rol es dirigir a la IA bajo criterios estrictos de testing, asegurando que ca
 
 * **Backend as a Service (BaaS):** Firebase, Supabase
 
-* **Testing Stack:**
+* **Herramientas que uso:**
 
   * **Playwright:** Automatización de pruebas End-to-End (E2E), validación de flujos de usuario críticos y compatibilidad entre navegadores.
 
@@ -43,13 +43,13 @@ Mi rol es dirigir a la IA bajo criterios estrictos de testing, asegurando que ca
 
 ## 3. Ambientes de Trabajo y Trazabilidad
 
-El ciclo de pruebas se gestiona respetando la segregación de entornos:
+El ciclo de pruebas lo gestiono en 4 entornos aislados:
 
 1. **Development:** Construcción inicial y pruebas unitarias rápidas.
 
-2. **Testing:** Entorno dedicado para ejecución exhaustiva de casos de prueba y suites automatizadas.
+2. **Testing:** Entorno dedicado para ejecución exhaustiva de casos de prueba y pruebas automatizadas.
 
-3. **Staging:** Réplica fiel del entorno productivo para validación final con stakeholders y criterios de salida.
+3. **Staging:** Réplica fiel del entorno productivo para validación final de parte de clientes y personas interesadas.
 
 4. **Production:** Entorno protegido donde la tasa de defectos debe ser mínima o nula.
 
@@ -57,17 +57,17 @@ El ciclo de pruebas se gestiona respetando la segregación de entornos:
 
 ### Fase 1: Planificación
 
-* **Alcances y Riesgos:** Identificación previa de puntos críticos del sistema (vulnerabilidades, dependencias serverless).
+* **Alcances y Riesgos:** Identificación previa de puntos críticos de tu proyecto (vulnerabilidades, dependencias externas).
 
-* **Objetivos y Tipos de Prueba:** Definición de qué se valida (unitario, integración o E2E).
+* **Objetivos y Tipos de Prueba:** Definición de qué se va a validar (unitario, integración o E2E).
 
-* **Alineación con Interesados:** Comunicación directa con stakeholders para acordar qué se espera de las pruebas y establecer los **criterios de salida**.
+* **Alineación con Interesados:** Comunicación directa con clientes o personas interesadas para acordar qué se espera de las pruebas y establecer los **criterios de salida**.
 
 ### Fase 2: Análisis y Diseño
 
-* **De Requerimiento a Caso de Uso:** Traducción de las necesidades de negocio en escenarios reales y documentados.
+* **De Requerimiento a Caso de Uso:** Traducción de las necesidades de negocio en escenarios de test reales y documentados.
 
-* **Modelado de Actores:** Cada caso de uso describe qué debe hacer el sistema frente a la interacción del actor y qué objetivo concreto busca alcanzar el usuario.
+* **Modelado de eventos:** Cada caso de uso describe qué debe hacer el sistema frente a la interacción del usuario y qué objetivo concreto busca alcanzar.
 
 * **Diseño de Casos de Prueba con IA:** Utilización de la IA para formular combinaciones de casos límite, condiciones de error y pruebas de regresión a partir de la documentación técnica.
 
@@ -91,21 +91,19 @@ El ciclo de pruebas se gestiona respetando la segregación de entornos:
 
 * **Cierre de Ciclo:** Si la evidencia satisface los criterios, se concluye la etapa de pruebas.
 
-* **Reportes para Stakeholders:** Elaboración de resúmenes ejecutivos comprensibles y transparentes para los interesados del proyecto.
+* **Reportes para clientes o interesados:** Elaboración de resúmenes ejecutivos comprensibles y transparentes para los interesados del proyecto.
 
 * **Documentación y Legibilidad:** Consolidación de informes para garantizar que el proyecto mantenga total trazabilidad técnica a lo largo del tiempo.
 
 ## 5. Directrices Operativas para la IA en este Proyecto
 
-Cuando actúes como asistente técnico para la generación de tests:
+Las siguientes directrices establezco para una inteligencia artificial:
 
-1. **Prioriza la Experiencia de Usuario:** Escribe pruebas que interactúen con el DOM tal como lo haría un usuario real (preferir selectores accesibles en RTL como \`getByRole\`, \`getByLabelText\`).
+1. **Priorizar la Experiencia de Usuario:** Se deben escribir pruebas que interactúen con el DOM tal como lo haría un usuario real.
 
-2. **Aislar Dependencias Serverless:** Al probar interfaces conectadas a Firebase o Supabase, asegura la implementación de mocks limpios para llamadas a APIs, estados de carga (*loading*) y respuestas de error.
+2. **Casos de Uso Completos:** Cada test debe responder a un objetivo real del usuario de la interfaz.
 
-3. **Casos de Uso Completos:** Cada test debe responder a un objetivo real del actor en la vista. No generes pruebas superficiales que solo evalúen renderizado básico.
-
-4. **Claridad y Mantenibilidad:** El código de test debe estar documentado, con aserciones legibles y mensajes de error descriptivos.`;
+3. **Claridad y Mantenibilidad:** El código de test debe estar documentado, con aserciones legibles y mensajes de error descriptivos.`;
 
 const markdown2 = ``;
 
