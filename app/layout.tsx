@@ -16,14 +16,22 @@ export default function RootLayout({
       data-theme="dark"
       data-brand="default"
     >
-      <body>
+      <body
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <DesignSystemProvider
           theme="dark"
           brand="default"
         >
           <Navbar />
 
-          {children}
+          <main style={{ flex: 1 }}>
+            {children}
+          </main>
 
           <Footer />
         </DesignSystemProvider>
