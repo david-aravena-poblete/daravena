@@ -36,7 +36,7 @@ export function Navbar() {
               <Avatar
                 size="lg"
                 alt="David Aravena"
-                src="https://i.pravatar.cc/150?img=12"
+                src="/images/davidaravena.jpeg"
               />
 
               <Stack gap="none">
