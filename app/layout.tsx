@@ -2,8 +2,8 @@ import "@tefi/design-system/styles.css";
 
 import { DesignSystemProvider } from "@tefi/design-system";
 
-import { Navbar } from "./ui/Navbar";
-import { Footer } from "./ui/Footer";
+import { Navbar } from "./ui/navbar/Navbar";
+import { Footer } from "./ui/footer/Footer";
 
 export default function RootLayout({
   children,

@@ -196,6 +196,9 @@ export default function FrontendPage() {
         </Stack>
 
         <Carousel controls="outside">
+
+          {/* PROYECTO TIMELINE */}
+
           <Card>
             <Card.Header>
               <Heading>
@@ -203,8 +206,18 @@ export default function FrontendPage() {
               </Heading>
 
               <Text>
-              Este contexto tiene los 5 niveles necesarios para que una IA pueda generar una línea de tiempo interactiva que muestra informacion correspondiente a la fecha (año) seleccionada por el usuario.
+                Este contexto tiene los 5 niveles necesarios para que una IA pueda generar una línea de tiempo interactiva que muestra informacion correspondiente a la fecha (año) seleccionada por el usuario.
               </Text>
+
+              <a
+                href="https://timeline-phi-seven.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="link">
+                  Ver proyecto ↗
+                </Button>
+              </a>
             </Card.Header>
 
             <Card.Body>
@@ -213,6 +226,8 @@ export default function FrontendPage() {
               </MarkdownCard>
             </Card.Body>
           </Card>
+
+          {/* PROYECTO TEFI DESIGN SYSTEM */}
 
           <Card>
             <Card.Header>
@@ -223,6 +238,16 @@ export default function FrontendPage() {
               <Text>
                 Este es el contexto necesario para que una IA pueda dar diseño (color y forma) a una pagina web haciendo uso de una configuracion diseñada a pedido por el cliente.
               </Text>
+
+              <a
+                href="https://tefi-design-system-react.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="link">
+                  Ver proyecto ↗
+                </Button>
+              </a>
             </Card.Header>
 
             <Card.Body>
@@ -231,6 +256,7 @@ export default function FrontendPage() {
               </MarkdownCard>
             </Card.Body>
           </Card>
+
         </Carousel>
       </Stack>
     </Container>

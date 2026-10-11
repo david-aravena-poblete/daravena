@@ -74,7 +74,7 @@ export function Navbar() {
           >
             <Link href="/contact">
               <Button variant="secondary">
-                Contacto
+                Contáctame
               </Button>
             </Link>
 

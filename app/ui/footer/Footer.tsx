@@ -6,7 +6,7 @@ import {
   Text,
 } from "@tefi/design-system";
 
-import { SocialLinks } from "./SocialLinks";
+import { SocialLinks } from "../social-links/SocialLinks";
 
 export function Footer() {
   return (

@@ -1,12 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-import Link from "next/link";
-
 import {
-  Box,
-  Button,
   Card,
   Container,
   Grid,
@@ -18,171 +12,123 @@ import {
   Typewriter,
 } from "@tefi/design-system";
 
+import Projects from "@/app/ui/projects/Projects";
+
 export default function LandingPage() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <>
-      {/* ======================================
-         INTRO
-      ====================================== */}
-
       <Section>
         <Container>
-          <Stack>
-            <Heading
-              as="h1"
-              size="2xl"
-            >
-              Frontend developer potenciado con inteligencia artificial
-            </Heading>
+          <Stack
+            style={{
+              gap: "var(--section-spacing-md)",
+            }}
+          >
+            <Stack>
+              <Heading
+                as="h1"
+                size="2xl"
+              >
+                Frontend developer potenciado con inteligencia artificial
+              </Heading>
+
               <Typewriter
                 text="Con mi criterio tecnico dirijo a una inteligencia artificial para transformar las distintas partes de tu proyecto o negocio, en interfaces web. Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web."
                 icon="bot"
               />
-        
+
+              <Grid>
+                <Card>
+                  <Card.Media>
+                    <Image
+                      src="/images/frontend-developer.jpeg"
+                      alt="Ingeniería de prompts"
+                      aspect="4:3"
+                    />
+                  </Card.Media>
+
+                  <Card.Body>
+                    <Stack>
+                      <Heading
+                        as="h3"
+                        size="xl"
+                        lines={2}
+                      >
+                        Soy Frontend developer
+                      </Heading>
+
+                      <Text
+                        expandable
+                        lines={4}
+                      >
+                        Dirijo a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles. De esta forma construyo y mantengo interfaces web respetando criterios y buenas practicas de las tecnologias frontend.
+                      </Text>
+                    </Stack>
+                  </Card.Body>
+                </Card>
+
+                <Card>
+                  <Card.Media>
+                    <Image
+                      src="/images/frontend-code.jpeg"
+                      alt="Frontend developer"
+                      aspect="4:3"
+                    />
+                  </Card.Media>
+
+                  <Card.Body>
+                    <Stack>
+                      <Heading
+                        as="h3"
+                        size="xl"
+                        lines={2}
+                      >
+                        Hago testing de codigo
+                      </Heading>
+
+                      <Text
+                        expandable
+                        lines={4}
+                      >
+                        Dirijo a una inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente al navegar por la interfaz web.
+                      </Text>
+                    </Stack>
+                  </Card.Body>
+                </Card>
+
+                <Card>
+                  <Card.Media>
+                    <Image
+                      src="/images/spec-driven-development.jpeg"
+                      alt="Spec Driven Development"
+                      aspect="4:3"
+                    />
+                  </Card.Media>
+
+                  <Card.Body>
+                    <Stack>
+                      <Heading
+                        as="h3"
+                        size="xl"
+                        lines={2}
+                      >
+                        Desarrollo y organizo contexto
+                      </Heading>
+
+                      <Text
+                        expandable
+                        lines={4}
+                      >
+                        Escribo, estructuro y suministro la informacion que necesita un modelo de inteligencia artificial, para que sea capaz de generar y mantener una interfaz web acorde a las necesidades de tu proyecto.
+                      </Text>
+                    </Stack>
+                  </Card.Body>
+                </Card>
+              </Grid>
+            </Stack>
+
+            <Projects />
           </Stack>
-
-          {/* ======================================
-             SERVICES
-          ====================================== */}
-
-          <Section>
-            <Grid>
-              {/* ======================================
-                 PROMPT ENGINEERING
-              ====================================== */}
-
-              <Card>
-                <Card.Media>
-                  <Image
-                    src="/images/frontend-developer.jpeg"
-                    alt="Ingeniería de prompts"
-                    aspect="4:3"
-                  />
-                </Card.Media>
-
-                <Card.Body>
-                  <Stack>
-                    <Heading
-                      as="h3"
-                      size="xl"
-                      lines={2}
-                    >
-                      Soy Frontend developer
-                    </Heading>
-
-                    <Text
-                      expandable
-                      lines={4}
-                    >
-                      Dirijo a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles. De esta forma construyo y mantengo interfaces web respetando criterios y buenas practicas de las tecnologias frontend.
-                    </Text>
-                  </Stack>
-                </Card.Body>
-
-                <Card.Footer>
-                  <Link href="/frontend">
-                    <Button fullWidth>
-                      Ver ejemplos
-                    </Button>
-                  </Link>
-                </Card.Footer>
-              </Card>
-
-              {/* ======================================
-                 FRONTEND DEVELOPER
-              ====================================== */}
-
-              <Card>
-                <Card.Media>
-                  <Image
-                    src="/images/frontend-code.jpeg"
-                    alt="Frontend developer"
-                    aspect="4:3"
-                  />
-                </Card.Media>
-
-                <Card.Body>
-                  <Stack>
-                    <Heading
-                      as="h3"
-                      size="xl"
-                      lines={2}
-                    >
-                      Hago testing de codigo
-                    </Heading>
-
-                    <Text
-                      expandable
-                      lines={4}
-                    >
-                      Dirijo a una inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente al navegar por la interfaz web.
-                    </Text>
-                  </Stack>
-                </Card.Body>
-
-                <Card.Footer>
-                  <Link href="/testing">
-                    <Button fullWidth>
-                      Ver ejemplos
-                    </Button>
-                  </Link>
-                </Card.Footer>
-              </Card>
-
-              {/* ======================================
-                 SPEC DRIVEN DEVELOPMENT
-              ====================================== */}
-
-              <Card>
-                <Card.Media>
-                  <Image
-                    src="/images/spec-driven-development.jpeg"
-                    alt="Spec Driven Development"
-                    aspect="4:3"
-                  />
-                </Card.Media>
-
-                <Card.Body>
-                  <Stack>
-                    <Heading
-                      as="h3"
-                      size="xl"
-                      lines={2}
-                    >
-                      Desarrollo y organizo contexto
-                    </Heading>
-
-                    <Text
-                      expandable
-                      lines={4}
-                    >
-                      Escribo, estructuro y suministro la informacion que necesita un modelo de inteligencia artificial, para que sea capaz de generar y mantener una interfaz web acorde a las necesidades de tu proyecto.
-                    </Text>
-                  </Stack>
-                </Card.Body>
-
-                <Card.Footer>
-                  <Link href="/contexto">
-                    <Button fullWidth>
-                      Ver ejemplos
-                    </Button>
-                  </Link>
-                </Card.Footer>
-              </Card>
-            </Grid>
-          </Section>
         </Container>
       </Section>
     </>
