@@ -12,7 +12,7 @@ import {
 const projects = [
   {
     title: "Timeline",
-    description: "Componente reutilizable hecho con react js.",
+    description: "Componente reutilizable hecho con react js. Timeline muestra información como texto y imágenes atravez de una linea de tiempo interactiva y animada.",
     image: "/images/web/TIMELINE-web.jpeg",
     href: "https://timeline-phi-seven.vercel.app/",
   }
