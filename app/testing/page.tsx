@@ -179,11 +179,11 @@ export default function TestingPage() {
       <Stack gap="md">
         <Stack gap="xs">
           <Heading>
-            Testing de código con IA
+            Hago testing de código con IA
           </Heading>
 
           <Text>
-            Dirijo a la inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente.
+            Dirijo a la inteligencia artificial para auditar cada línea de código bajo criterios de testing de frontend. Identifico y resuelvo defectos estructurales o lógicos mucho antes de que un usuario los pueda experimentar.
           </Text>
         </Stack>
 
@@ -191,11 +191,11 @@ export default function TestingPage() {
           <Card>
             <Card.Header>
               <Heading>
-                Ejemplo 1
+                Protocolo de Testing y QA
               </Heading>
 
               <Text>
-                Contenido pendiente.
+                Este es mi estándar de validación. Las reglas con las que ordeno a la IA auditar el código, buscar defectos y garantizar la estabilidad de la interfaz frente a casos de uso reales.
               </Text>
             </Card.Header>
 
