@@ -12,28 +12,10 @@ import {
 const projects = [
   {
     title: "Timeline",
-    description: "Proyecto interactivo desarrollado con React.",
+    description: "Componente reutilizable hecho con react js.",
     image: "/images/web/TIMELINE-web.jpeg",
     href: "https://timeline-phi-seven.vercel.app/",
-  },
-  {
-    title: "Aprender a Leer",
-    description: "Aplicación web interactiva desarrollada con React.",
-    image: "/images/web/AP-web.jpeg",
-    href: "https://aprender-a-leer-six.vercel.app/",
-  },
-  {
-    title: "Daravena",
-    description: "Sitio web personal y profesional de David Aravena.",
-    image: "/images/web/DA-web.jpeg",
-    href: "https://daravena.cl",
-  },
-  {
-    title: "Tefi Design System",
-    description: "Sistema de diseño desarrollado con React.",
-    image: "/images/web/DS-web.jpeg",
-    href: "https://tefi-design-system-react.vercel.app/",
-  },
+  }
 ];
 
 export default function Projects() {
