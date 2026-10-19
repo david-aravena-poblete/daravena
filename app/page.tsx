@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para generar sitios web hechos a medida para lo que necesita el cliente. Esto incluye los distintos assets que conforman el sitio como logotipos, imágenes, iconos, contenido, gráficas animadas y diseño.
+                        Dirigo a una inteligencia artificial para generar sitios web hechos a medida para lo que necesita mi cliente. Esto incluye los distintos assets que conforman el sitio como logotipos, imágenes, iconos, contenido, gráficas animadas y diseño.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -90,7 +90,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirijo a una inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que tus usuarios o clientes los experimenten al navegar por tu interfaz.
+                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se corrigieron en el código y que los errores, defectos y fallos se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
                       </Text>
                     </Stack>
                   </Card.Body>
