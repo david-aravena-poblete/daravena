@@ -54,7 +54,7 @@ export default function LandingPage() {
                         size="xl"
                         lines={2}
                       >
-                        Soy Frontend developer
+                        Hago Desarrollo web
                       </Heading>
 
                       <Text
