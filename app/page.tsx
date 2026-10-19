@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Hago con inteligencia artificial interfaces web para que puedas manejar con tu computadora o celular, las distintas partes de tu proyecto o negocio. Uso servidores serverless como supabase y firebase para que puedas validar y probar tu interfaz mientras funciona para eso a lo que te dedicas.
+                        En tiempos de inteligencia artificial mi trabajo se centra en tres pilares: Gestión del contexto y del requerimiento del cliente para la inteligencia artificial, desarrollo web y testing.
                       </Text>
                     </Stack>
                   </Card.Body>
