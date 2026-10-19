@@ -33,7 +33,7 @@ export default function LandingPage() {
               </Heading>
 
               <Typewriter
-                text="Con mi criterio tecnico dirijo a una inteligencia artificial para transformar las distintas partes de tu proyecto o negocio, en interfaces web. Una interfaz web es la pantalla visual con la que interactuas cuando entras a una pagina web."
+                text="En tiempos de inteligencia artificial mi trabajo se centra en tres pilares: Gestión del contexto y del requerimiento del cliente para la inteligencia artificial, desarrollo web y testing."
                 icon="bot"
               />
 
