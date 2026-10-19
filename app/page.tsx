@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirijo a una inteligencia artificial paso a paso mediante mi metodología de 5 niveles. De esta forma construyo y mantengo interfaces web respetando criterios y buenas practicas de las tecnologias frontend.
+                        Hago con inteligencia artificial interfaces web para que puedas manejar con tu computadora o celular, las distintas partes de tu proyecto o negocio. Uso servidores serverless como supabase y firebase para que puedas validar y probar tu interfaz mientras funciona para eso a lo que te dedicas.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -90,7 +90,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirijo a una inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que el usuario los experimente al navegar por la interfaz web.
+                        Dirijo a una inteligencia artificial para realizar inspecciones minuciosas de cada línea de código, para rastrear defectos estructurales o de lógica y corregirlos mucho antes de que tus usuarios o clientes los experimenten al navegar por tu interfaz.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -119,7 +119,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Escribo, estructuro y suministro la informacion que necesita un modelo de inteligencia artificial, para que sea capaz de generar y mantener una interfaz web acorde a las necesidades de tu proyecto.
+                        Escribo, estructuro y suministro la informacion, buenas practicas y metodologias que necesita un modelo de inteligencia artificial, para que sea capaz de generar y mantener una interfaz web acorde a las necesidades de tu proyecto.
                       </Text>
                     </Stack>
                   </Card.Body>

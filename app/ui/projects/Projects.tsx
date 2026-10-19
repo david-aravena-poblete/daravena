@@ -12,9 +12,15 @@ import {
 const projects = [
   {
     title: "Timeline",
-    description: "Componente reutilizable hecho con react js. Timeline muestra información como texto y imágenes atravez de una linea de tiempo interactiva y animada.",
+    description: "Este es un componente hecho con react js que muestra información en una linea de tiempo interactiva y animada.",
     image: "/images/web/TIMELINE-web.jpeg",
     href: "https://timeline-phi-seven.vercel.app/",
+  },
+  {
+    title: "Aprender a Leer",
+    description: "Proyecto (en desarrollo) hecho con Next.js para ayudar a niños a reconocer letras y asociarlas con palabras e imágenes mediante llamativas tarjetas animadas",
+    image: "/images/web/AP-web.jpeg",
+    href: "https://aprender-a-leer-ten.vercel.app/",
   }
 ];
 
