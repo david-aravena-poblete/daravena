@@ -112,14 +112,14 @@ export default function LandingPage() {
                         size="xl"
                         lines={2}
                       >
-                        Desarrollo y organizo contexto
+                        Gestiono contexto y requerimientos del cliente
                       </Heading>
 
                       <Text
                         expandable
                         lines={4}
                       >
-                        Escribo, estructuro y suministro la informacion, buenas practicas y metodologias que necesita un modelo de inteligencia artificial, para que sea capaz de generar y mantener una interfaz web acorde a las necesidades de tu proyecto.
+                        Transformo necesidades del cliente en requerimientos claros y contexto técnico para dirigir a la inteligencia artificial. Así me aseguro que el código generado sigue buenas prácticas del desarrollo web que garantizan un proyecto organizado, mantenible y preparado para evolucionar.
                       </Text>
                     </Stack>
                   </Card.Body>
