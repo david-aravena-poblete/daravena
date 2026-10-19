@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        En tiempos de inteligencia artificial mi trabajo se centra en tres pilares: Gestión del contexto y del requerimiento del cliente para la inteligencia artificial, desarrollo web y testing.
+                        Dirigo a una inteligencia artificial para generar sitios web hechos a medida para lo que necesita el cliente. Esto incluye los distintos assets que conforman el sitio como logotipos, imágenes, iconos, contenido, gráficas animadas y diseño.
                       </Text>
                     </Stack>
                   </Card.Body>
