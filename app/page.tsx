@@ -41,7 +41,7 @@ export default function LandingPage() {
                 <Card>
                   <Card.Media>
                     <Image
-                      src="/images/frontend-developer.jpeg"
+                      src="/images/frontend-code.jpg"
                       alt="Ingeniería de prompts"
                       aspect="4:3"
                     />
@@ -70,7 +70,7 @@ export default function LandingPage() {
                 <Card>
                   <Card.Media>
                     <Image
-                      src="/images/frontend-code.jpeg"
+                      src="/images/frontend-test.jpg"
                       alt="Frontend developer"
                       aspect="4:3"
                     />
@@ -99,7 +99,7 @@ export default function LandingPage() {
                 <Card>
                   <Card.Media>
                     <Image
-                      src="/images/spec-driven-development.jpeg"
+                      src="/images/frontend-context.jpeg"
                       alt="Spec Driven Development"
                       aspect="4:3"
                     />
