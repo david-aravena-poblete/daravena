@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para generar sitios web hechos a medida para lo que necesita mi cliente. Esto incluye los distintos assets que conforman el sitio como logotipos, imágenes, iconos, contenido, gráficas animadas y diseño.
+                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye los distintos assets del sitio como logotipos, imágenes, iconos, contenidos, gráficas animadas y diseño.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -90,7 +90,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se corrigieron en el código y que los errores, defectos y fallos se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
+                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se eliminaron y que los errores, defectos y fallos se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -119,7 +119,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Transformo necesidades del cliente en requerimientos claros y contexto técnico para dirigir a la inteligencia artificial. Así me aseguro que el código generado sigue buenas prácticas del desarrollo web que garantizan un proyecto organizado, mantenible y preparado para evolucionar.
+                        Transformo lo que quiere mi cliente en contexto para dirigir a la inteligencia artificial. Así me aseguro que el código generado siga criterios y buenas prácticas del desarrollo web, que garantizan un proyecto organizado, mantenible y preparado para crecer.
                       </Text>
                     </Stack>
                   </Card.Body>
