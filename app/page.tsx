@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye los distintos assets del sitio como logotipos, imágenes, gráficas animadas y diseño.
+                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye logotipos, imágenes, gráficas animadas, diseño y conexión con servicios externos.
                       </Text>
                     </Stack>
                   </Card.Body>
