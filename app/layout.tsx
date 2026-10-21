@@ -1,7 +1,7 @@
 import "@tefi/design-system/styles.css";
 
 import { DesignSystemProvider } from "@tefi/design-system";
-
+import { Analytics } from "@vercel/analytics/next"
 import { Navbar } from "./ui/navbar/Navbar";
 import { Footer } from "./ui/footer/Footer";
 
@@ -35,6 +35,7 @@ export default function RootLayout({
 
           <Footer />
         </DesignSystemProvider>
+        <Analytics/>
       </body>
     </html>
   );
