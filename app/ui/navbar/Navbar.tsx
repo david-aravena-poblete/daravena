@@ -62,7 +62,7 @@ export function Navbar() {
                 </Text>
 
                 <Text>
-                  Desarrollador web
+                  Desarrollo web
                 </Text>
               </Stack>
             </Inline>
