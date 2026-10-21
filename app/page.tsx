@@ -29,11 +29,11 @@ export default function LandingPage() {
                 as="h1"
                 size="2xl"
               >
-                Frontend developer potenciado con inteligencia artificial
+                Desarrollo web potenciado con inteligencia artificial
               </Heading>
 
               <Typewriter
-                text="En tiempos de inteligencia artificial mi trabajo se centra en tres pilares: Gestión del contexto y del requerimiento del cliente para la inteligencia artificial, desarrollo web y testing."
+                text="En tiempos de inteligencia artificial mi trabajo se centra en tres pilares: Desarrollo de contexto para una inteligencia artificial, desarrollo web y testing de codigo."
                 icon="bot"
               />
 
@@ -61,7 +61,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye los distintos assets del sitio como logotipos, imágenes, iconos, contenidos, gráficas animadas y diseño.
+                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye los distintos assets del sitio como logotipos, imágenes, gráficas animadas y diseño.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -90,7 +90,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se eliminaron y que los errores, defectos y fallos se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
+                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se eliminaron y que los errores de sistema se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
                       </Text>
                     </Stack>
                   </Card.Body>
@@ -112,14 +112,14 @@ export default function LandingPage() {
                         size="xl"
                         lines={2}
                       >
-                        Gestiono contexto y requerimientos del cliente
+                        Desarrollo contexto para IA
                       </Heading>
 
                       <Text
                         expandable
                         lines={4}
                       >
-                        Transformo lo que quiere mi cliente en contexto para dirigir a la inteligencia artificial. Así me aseguro que el código generado siga criterios y buenas prácticas del desarrollo web, que garantizan un proyecto organizado, mantenible y preparado para crecer.
+                        Escribo y organizo contexto para que la IA no haga código basura ni funcionalidades deficientes. Así me aseguro que tú proyecto siga criterios y buenas prácticas del desarrollo web que garantizan un proyecto organizado, mantenible y preparado para crecer.
                       </Text>
                     </Stack>
                   </Card.Body>
