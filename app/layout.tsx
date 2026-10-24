@@ -4,9 +4,22 @@ import { Analytics } from "@vercel/analytics/next"
 import { Navbar } from "./ui/navbar/Navbar";
 import { Footer } from "./ui/footer/Footer";
 
-export const metadata = {
-  title: 'daravena',
-  description: 'Pagina web personal del programador frontend David Aravena',
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://daravena.cl"),
+  title: "Daravena | Desarrollo Frontend",
+  description: "David Aravena, desarrollador frontend potenciado con inteligencia artificial.",
+  openGraph: {
+    title: "Daravena | Desarrollo Frontend",
+    description: "David Aravena, desarrollador frontend potenciado con inteligencia artificial.",
+    url: "https://daravena.cl",
+    siteName: "Daravena",
+    locale: "es_CL",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Daravena — Desarrollo frontend e inteligencia artificial" }],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 
