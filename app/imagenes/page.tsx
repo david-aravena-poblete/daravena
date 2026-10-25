@@ -9,53 +9,61 @@ import {
   Stack,
   Text,
 } from "@tefi/design-system";
+import styles from "./page.module.css";
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200",
-    alt: "Imagen de ejemplo 1: componentes electrónicos",
-    title: "Imagen de ejemplo 1",
-    description: "Texto de prueba para presentar el primer elemento del carrusel.",
+    src: "/images/wide_clean_vector_illustration_flat_3d_ish_ui_te.png",
+    alt: "Robot dibujando frente a la estructura de carpetas del proyecto daravena, con tres vistas y sus archivos y directorios correspondientes.",
+    title: "Arquitectura y estructura de carpetas",
+    description:
+      "Organizo cada vista dentro de app con su propio archivo de página, estilos y carpetas de componentes, interfaz y utilidades. Los componentes de lógica coordinan funcionalidades y delegan la presentación a componentes de UI y el procesamiento a funciones utils. Esta separación facilita mantener y ampliar el proyecto.",
   },
   {
     src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
-    alt: "Imagen de ejemplo 2: espacio de trabajo",
-    title: "Imagen de ejemplo 2",
-    description: "Texto de prueba para presentar el segundo elemento del carrusel.",
+    alt: "Espacio de trabajo de desarrollo",
+    title: "Componentes de lógica",
+    description:
+      "Cada componente de lógica coordina una funcionalidad. Gestiona los estados y eventos, utiliza componentes de UI para presentar información y delega las operaciones a sus propias funciones utils.",
   },
   {
     src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200",
-    alt: "Imagen de ejemplo 3: escritorio con computador",
-    title: "Imagen de ejemplo 3",
-    description: "Texto de prueba para presentar el tercer elemento del carrusel.",
+    alt: "Escritorio con computador",
+    title: "Funciones utils y métodos handle",
+    description:
+      "Los métodos handle capturan y validan los datos de las interacciones. Las funciones utils realizan el procesamiento, con una responsabilidad específica por función.",
   },
 ];
 
 export default function ImagenesPage() {
   return (
     <Section>
-      <Container size="md">
+      <Container size="lg">
         <Stack gap="xl">
           <Stack gap="sm">
             <Heading as="h1" size="2xl">
-              Galería de imágenes
+              Arquitectura visual
             </Heading>
             <Text>
-              Ejemplo de Carousel con tres imágenes y textos temporales.
+              Diagramas e ilustraciones que explican cómo organizo mis proyectos.
             </Text>
           </Stack>
 
           <Carousel controls="overlay">
             {slides.map((slide) => (
-              <Stack key={slide.src} gap="md">
-                <Image src={slide.src} alt={slide.alt} aspect="16:9" />
-                <Stack gap="sm">
-                  <Heading as="h2" size="lg">
-                    {slide.title}
-                  </Heading>
-                  <Text>{slide.description}</Text>
-                </Stack>
-              </Stack>
+              <div className={styles.slide} key={slide.src}>
+                <Heading as="h2" size="lg">
+                  {slide.title}
+                </Heading>
+                <div className={styles.content}>
+                  <div className={styles.description}>
+                    <Text>{slide.description}</Text>
+                  </div>
+                  <div className={styles.image}>
+                    <Image src={slide.src} alt={slide.alt} aspect="16:9" />
+                  </div>
+                </div>
+              </div>
             ))}
           </Carousel>
         </Stack>
