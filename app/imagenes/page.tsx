@@ -12,10 +12,13 @@ import {
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200",
+    src: "/images/wide_clean_vector_illustration_flat_3d_ish_ui_te.png",
     alt: "Imagen de ejemplo 1: componentes electrónicos",
-    title: "Imagen de ejemplo 1",
-    description: "Texto de prueba para presentar el primer elemento del carrusel.",
+    title: "Desarrollo y organizo contexto",
+    description:
+    "Inicio especificando una estructura fija para cada componente que haya que construir.\n\n" +
+    "Cada componente va a ser igual en estructura.\n\n" +
+    "En mis proyectos solo hago que existan 5 tipos de cosas: controladores, servicios, componentes de lógica, componentes de UI y archivos css. Nada más.",
   },
   {
     src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
@@ -53,7 +56,7 @@ export default function ImagenesPage() {
                   <Heading as="h2" size="lg">
                     {slide.title}
                   </Heading>
-                  <Text>{slide.description}</Text>
+                  <Text >{slide.description}</Text>
                 </Stack>
               </Stack>
             ))}
