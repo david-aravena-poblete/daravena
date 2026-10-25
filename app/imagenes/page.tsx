@@ -9,6 +9,7 @@ import {
   Stack,
   Text,
 } from "@tefi/design-system";
+import styles from "./page.module.css";
 
 const slides = [
   {
@@ -22,34 +23,37 @@ const slides = [
   },
   {
     src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
-    alt: "Imagen de ejemplo 2: espacio de trabajo",
-    title: "Imagen de ejemplo 2",
-    description: "Texto de prueba para presentar el segundo elemento del carrusel.",
+    alt: "Espacio de trabajo de desarrollo",
+    title: "Componentes de lógica",
+    description:
+      "Cada componente de lógica coordina una funcionalidad. Gestiona los estados y eventos, utiliza componentes de UI para presentar información y delega las operaciones a sus propias funciones utils.",
   },
   {
     src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200",
-    alt: "Imagen de ejemplo 3: escritorio con computador",
-    title: "Imagen de ejemplo 3",
-    description: "Texto de prueba para presentar el tercer elemento del carrusel.",
+    alt: "Escritorio con computador",
+    title: "Funciones utils y métodos handle",
+    description:
+      "Los métodos handle capturan y validan los datos de las interacciones. Las funciones utils realizan el procesamiento, con una responsabilidad específica por función.",
   },
 ];
 
 export default function ImagenesPage() {
   return (
     <Section>
-      <Container size="md">
+      <Container size="lg">
         <Stack gap="xl">
           <Stack gap="sm">
             <Heading as="h1" size="2xl">
-              Galería de imágenes
+              Arquitectura visual
             </Heading>
             <Text>
-              Ejemplo de Carousel con tres imágenes y textos temporales.
+              Diagramas e ilustraciones que explican cómo organizo mis proyectos.
             </Text>
           </Stack>
 
           <Carousel controls="overlay">
             {slides.map((slide) => (
+<<<<<<< HEAD
               <Stack key={slide.src} gap="md">
                 <Image src={slide.src} alt={slide.alt} aspect="16:9" />
                 <Stack gap="sm">
@@ -59,6 +63,21 @@ export default function ImagenesPage() {
                   <Text >{slide.description}</Text>
                 </Stack>
               </Stack>
+=======
+              <div className={styles.slide} key={slide.src}>
+                <Heading as="h2" size="lg">
+                  {slide.title}
+                </Heading>
+                <div className={styles.content}>
+                  <div className={styles.description}>
+                    <Text>{slide.description}</Text>
+                  </div>
+                  <div className={styles.image}>
+                    <Image src={slide.src} alt={slide.alt} aspect="16:9" />
+                  </div>
+                </div>
+              </div>
+>>>>>>> 48d6a6dbcf4ad593ab718d9220b1426e937b2a7d
             ))}
           </Carousel>
         </Stack>
