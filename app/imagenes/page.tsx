@@ -50,10 +50,8 @@ export default function ImagenesPage() {
               Diagramas e ilustraciones que explican cómo organizo mis proyectos.
             </Text>
           </Stack>
-
           <Carousel controls="overlay">
             {slides.map((slide) => (
-<<<<<<< HEAD
               <Stack key={slide.src} gap="md">
                 <Image src={slide.src} alt={slide.alt} aspect="16:9" />
                 <Stack gap="sm">
@@ -63,21 +61,6 @@ export default function ImagenesPage() {
                   <Text >{slide.description}</Text>
                 </Stack>
               </Stack>
-=======
-              <div className={styles.slide} key={slide.src}>
-                <Heading as="h2" size="lg">
-                  {slide.title}
-                </Heading>
-                <div className={styles.content}>
-                  <div className={styles.description}>
-                    <Text>{slide.description}</Text>
-                  </div>
-                  <div className={styles.image}>
-                    <Image src={slide.src} alt={slide.alt} aspect="16:9" />
-                  </div>
-                </div>
-              </div>
->>>>>>> 48d6a6dbcf4ad593ab718d9220b1426e937b2a7d
             ))}
           </Carousel>
         </Stack>
