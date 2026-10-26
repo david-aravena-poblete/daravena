@@ -42,7 +42,8 @@ export default function ContextPage() {
             </Text>
           </Stack>
 
-          <Carousel controls="overlay">
+          <div className={styles.carouselControlsResponsive}>
+            <Carousel controls="overlay">
             {slides.map((slide) => (
               <Stack key={slide.src} gap="md">
                 <Image src={slide.src} alt={slide.alt} aspect="16:9" />
@@ -54,7 +55,8 @@ export default function ContextPage() {
                 </Stack>
               </Stack>
             ))}
-          </Carousel>
+            </Carousel>
+          </div>
         </Stack>
       </Container>
     </Section>
