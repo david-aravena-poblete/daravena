@@ -22,7 +22,7 @@ const slides = [
   {
     src: "/images/robot_estructuras_2.jpg",
     alt: "Espacio de trabajo de desarrollo",
-    title: "Componentes de lógica",
+    title: "Genero estructuras de codigo",
     description:
       "Para cada proyecto genero la misma estructura pequeña, predecible y facil de comprender. Tanto para una IA como para un humano es facil detectar una falla o modificar algo si se sabe donde buscar en un espacio pequeño y facil de aprender.",
   },
@@ -35,10 +35,10 @@ export default function ContextPage() {
         <Stack gap="xl">
           <Stack gap="sm">
             <Heading as="h1" size="2xl">
-              Arquitectura visual
+              Contexto segun daravena.
             </Heading>
             <Text>
-              Diagramas e ilustraciones que explican cómo organizo mis proyectos.
+              El contexto se trata de lo que necesito que una maquina sepa, en un momento dado, para que pueda hacer algo. Organizo contextos muy dinamicos que van cambiando de acuerdo a la situacion o contexto en el que se dan. Cada contexto puede verse como una habilidad de mi inteligencia artificial.
             </Text>
           </Stack>
 
