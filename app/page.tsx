@@ -41,6 +41,35 @@ export default function LandingPage() {
                 <Card>
                   <Card.Media>
                     <Image
+                      src="/images/robot_estudiando.jpg"
+                      alt="Ingeniería de prompts"
+                      aspect="4:3"
+                    />
+                  </Card.Media>
+
+                  <Card.Body>
+                    <Stack>
+                      <Heading
+                        as="h3"
+                        size="xl"
+                        lines={2}
+                      >
+                        Desarrollo contexto para IA
+                      </Heading>
+
+                      <Text
+                        expandable
+                        lines={4}
+                      >
+                        Escribo y organizo contexto para que la IA genere código limpio, que sigue criterios y buenas practicas del desarrollo web.
+                      </Text>
+                    </Stack>
+                  </Card.Body>
+                </Card>
+
+                <Card>
+                  <Card.Media>
+                    <Image
                       src="/images/frontend-code.jpg"
                       alt="Ingeniería de prompts"
                       aspect="4:3"
@@ -91,35 +120,6 @@ export default function LandingPage() {
                         lines={4}
                       >
                         Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se eliminaron y que los errores de sistema se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
-                      </Text>
-                    </Stack>
-                  </Card.Body>
-                </Card>
-
-                <Card>
-                  <Card.Media>
-                    <Image
-                      src="/images/frontend-context.jpeg"
-                      alt="Spec Driven Development"
-                      aspect="4:3"
-                    />
-                  </Card.Media>
-
-                  <Card.Body>
-                    <Stack>
-                      <Heading
-                        as="h3"
-                        size="xl"
-                        lines={2}
-                      >
-                        Desarrollo contexto para IA
-                      </Heading>
-
-                      <Text
-                        expandable
-                        lines={4}
-                      >
-                        Escribo y organizo contexto para que la IA no haga código basura ni funcionalidades deficientes. Así me aseguro que tú proyecto siga criterios y buenas prácticas del desarrollo web que garantizan un proyecto organizado, mantenible y preparado para crecer.
                       </Text>
                     </Stack>
                   </Card.Body>
