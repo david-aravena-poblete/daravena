@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import {
+  Button,
   Card,
   Container,
   Grid,
@@ -63,6 +65,9 @@ export default function LandingPage() {
                       >
                         Escribo y organizo contexto para que la IA genere código limpio, que sigue criterios y buenas practicas del desarrollo web.
                       </Text>
+                      <Link href="/desarrollo-contexto">
+                        <Button variant="secondary">Ver ejemplo</Button>
+                      </Link>
                     </Stack>
                   </Card.Body>
                 </Card>
