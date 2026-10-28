@@ -14,8 +14,6 @@ import {
   Typewriter,
 } from "@tefi/design-system";
 
-import Projects from "@/app/ui/projects/Projects";
-
 export default function LandingPage() {
   return (
     <>
@@ -31,7 +29,7 @@ export default function LandingPage() {
                 as="h1"
                 size="2xl"
               >
-                Soy desarrollador web potenciado con inteligencia artificial!
+                Soy desarrollador web potenciado con inteligencia artificial
               </Heading>
 
               <Typewriter
