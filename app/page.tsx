@@ -72,34 +72,39 @@ export default function LandingPage() {
                   </Card.Body>
                 </Card>
 
-                <Card>
-                  <Card.Media>
-                    <Image
-                      src="/images/frontend-code.jpg"
-                      alt="Ingeniería de prompts"
-                      aspect="4:3"
-                    />
-                  </Card.Media>
+                <Link
+                  href="/soy-frontend"
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  <Card>
+                    <Card.Media>
+                      <Image
+                        src="/images/frontend-code.jpg"
+                        alt="Ingeniería de prompts"
+                        aspect="4:3"
+                      />
+                    </Card.Media>
 
-                  <Card.Body>
-                    <Stack>
-                      <Heading
-                        as="h3"
-                        size="xl"
-                        lines={2}
-                      >
-                        Hago Desarrollo web
-                      </Heading>
+                    <Card.Body>
+                      <Stack>
+                        <Heading
+                          as="h3"
+                          size="xl"
+                          lines={2}
+                        >
+                          Hago Desarrollo web
+                        </Heading>
 
-                      <Text
-                        expandable
-                        lines={4}
-                      >
-                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye logotipos, imágenes, gráficas animadas, diseño y conexión con servicios externos.
-                      </Text>
-                    </Stack>
-                  </Card.Body>
-                </Card>
+                        <Text
+                          expandable
+                          lines={4}
+                        >
+                          Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye logotipos, imágenes, gráficas animadas, diseño y conexión con servicios externos.
+                        </Text>
+                      </Stack>
+                    </Card.Body>
+                  </Card>
+                </Link>
 
                 <Card>
                   <Card.Media>
