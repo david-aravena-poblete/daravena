@@ -4,8 +4,8 @@ import { Container, Heading, Section, Stack, Text } from "@tefi/design-system";
 
 const projects = [
   {
-    title: "Proyecto Timeline",
-    description: "Una línea de tiempo interactiva que actualiza la historia y las imágenes según el año que selecciona el usuario.",
+    title: "Timeline",
+    description: "Este componente es una línea de tiempo interactiva que actualiza su informacion y imágenes, según el año al que se dirige un usuario por medio de un slider.",
     url: "https://timeline-phi-seven.vercel.app/",
   },
   {
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: "Aprender a leer",
-    description: "Una interfaz construida con un sistema de diseño configurable para adaptar colores, componentes y estilo a las necesidades de un proyecto.",
+    description: "Componente construido para apoyar a niños en su aprendizaje lector.",
     url: "https://aprender-a-leer-ten.vercel.app/",
   },
 ];
@@ -27,10 +27,10 @@ export default function SoyFrontendPage() {
         <Stack gap="lg">
           <Stack gap="xs">
             <Heading as="h1" size="2xl">
-              Mi trabajo como frontend
+              Mi trabajo como desarrollador web
             </Heading>
             <Text>
-              Dirijo a una inteligencia artificial mediante contexto y una metodología de cinco niveles para construir interfaces web diseñadas para resolver necesidades concretas.
+              Un componente es una estructura de codigo que corresponde a una funcionalidad de un sitio web. Un componente puede obtener informacion de fuentes externas para que un usuario pueda organizarla, mostrarla y modificarla.
             </Text>
           </Stack>
 

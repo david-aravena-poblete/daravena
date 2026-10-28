@@ -17,14 +17,14 @@ const slides = [
     alt: "Imagen de ejemplo 1: componentes electrónicos",
     title: "Desarrollo y organizo contexto",
     description:
-    "Preparo una estructura predefinida y se la paso a mi inteligencia artificial para que la aprenda y la aplique al construir cualquier componente o funcionalidad para el proyecto. ",
+    "Preparo una estructura de codigo predefinida y se la paso a mi inteligencia artificial para que la aprenda y con ella construya cualquier componente o funcionalidad para un proyecto. ",
   },
   {
     src: "/images/robot_estructuras_2.jpg",
     alt: "Espacio de trabajo de desarrollo",
     title: "Genero estructuras de codigo",
     description:
-      "Para cada proyecto genero la misma estructura pequeña, predecible y facil de comprender. Tanto para una IA como para un humano es facil detectar una falla o modificar algo si se sabe donde buscar en un espacio pequeño y facil de aprender.",
+      "Mi IA siempre genera la misma estructura pequeña, predecible y facil de comprender. Tanto para una IA como para un humano es facil detectar una falla o modificar algo si se sabe donde buscar en un espacio pequeño y facil de aprender.",
   },
 ];
 
@@ -35,10 +35,10 @@ export default function ContextPage() {
         <Stack gap="xl">
           <Stack gap="sm">
             <Heading as="h1" size="2xl">
-              Contexto segun daravena.
+              El contexto
             </Heading>
             <Text>
-              El contexto se trata de lo que necesito que una maquina sepa, en un momento dado, para que pueda hacer algo. Organizo contextos muy dinamicos que van cambiando de acuerdo a la situacion o contexto en el que se dan. Cada contexto puede verse como una habilidad de mi inteligencia artificial.
+              El contexto se trata de lo que necesito que una maquina sepa, en un momento dado, para que pueda generar la estructura de codigo necesaria para crear una funcionalidad.
             </Text>
           </Stack>
 
