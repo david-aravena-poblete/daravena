@@ -39,8 +39,8 @@ export default function LandingPage() {
                 icon="bot"
               />
 
-              <Grid>
-                <Card>
+              <Grid style={{ alignItems: "stretch" }}>
+                <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <Card.Media>
                     <Image
                       src="/images/robot_estudiando.jpg"
@@ -49,8 +49,8 @@ export default function LandingPage() {
                     />
                   </Card.Media>
 
-                  <Card.Body>
-                    <Stack>
+                  <Card.Body style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                    <Stack style={{ flex: 1 }}>
                       <Heading
                         as="h3"
                         size="xl"
@@ -65,48 +65,47 @@ export default function LandingPage() {
                       >
                         Escribo y organizo contexto para que la IA genere código limpio, que sigue criterios y buenas practicas del desarrollo web.
                       </Text>
-                      <Link href="/desarrollo-contexto">
-                        <Button variant="secondary">Ver ejemplo</Button>
+                      <Link href="/desarrollo-contexto" style={{ marginTop: "auto" }}>
+                        <Button variant="secondary">Ver ejemplos</Button>
                       </Link>
                     </Stack>
                   </Card.Body>
                 </Card>
 
-                <Link
-                  href="/soy-frontend"
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  <Card>
-                    <Card.Media>
-                      <Image
-                        src="/images/frontend-code.jpg"
-                        alt="Ingeniería de prompts"
-                        aspect="4:3"
-                      />
-                    </Card.Media>
+                <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                  <Card.Media>
+                    <Image
+                      src="/images/frontend-code.jpg"
+                      alt="Ingeniería de prompts"
+                      aspect="4:3"
+                    />
+                  </Card.Media>
 
-                    <Card.Body>
-                      <Stack>
-                        <Heading
-                          as="h3"
-                          size="xl"
-                          lines={2}
-                        >
-                          Hago Desarrollo web
-                        </Heading>
+                  <Card.Body style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                    <Stack style={{ flex: 1 }}>
+                      <Heading
+                        as="h3"
+                        size="xl"
+                        lines={2}
+                      >
+                        Hago Desarrollo web
+                      </Heading>
 
-                        <Text
-                          expandable
-                          lines={4}
-                        >
-                          Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye logotipos, imágenes, gráficas animadas, diseño y conexión con servicios externos.
-                        </Text>
-                      </Stack>
-                    </Card.Body>
-                  </Card>
-                </Link>
+                      <Text
+                        expandable
+                        lines={4}
+                      >
+                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye logotipos, imágenes, gráficas animadas, diseño y conexión con servicios externos.
+                      </Text>
 
-                <Card>
+                      <Link href="/soy-frontend" style={{ marginTop: "auto" }}>
+                        <Button variant="secondary">Ver ejemplos</Button>
+                      </Link>
+                    </Stack>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <Card.Media>
                     <Image
                       src="/images/frontend-test.jpg"
@@ -115,8 +114,8 @@ export default function LandingPage() {
                     />
                   </Card.Media>
 
-                  <Card.Body>
-                    <Stack>
+                  <Card.Body style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                    <Stack style={{ flex: 1 }}>
                       <Heading
                         as="h3"
                         size="xl"

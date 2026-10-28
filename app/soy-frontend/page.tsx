@@ -13,6 +13,11 @@ const projects = [
     description: "Una interfaz construida con un sistema de diseño configurable para adaptar colores, componentes y estilo a las necesidades de un proyecto.",
     url: "https://tefi-design-system-react.vercel.app/",
   },
+  {
+    title: "Aprender a leer",
+    description: "Una interfaz construida con un sistema de diseño configurable para adaptar colores, componentes y estilo a las necesidades de un proyecto.",
+    url: "https://aprender-a-leer-ten.vercel.app/",
+  },
 ];
 
 export default function SoyFrontendPage() {
