@@ -31,11 +31,11 @@ export default function LandingPage() {
                 as="h1"
                 size="2xl"
               >
-                Desarrollo web potenciado con inteligencia artificial
+                Soy desarrollador web potenciado con inteligencia artificial!
               </Heading>
 
               <Typewriter
-                text="En tiempos de inteligencia artificial mi trabajo se centra en tres pilares: Desarrollo de contexto para una inteligencia artificial, desarrollo web y testing de codigo."
+                text="Dirigo a una inteligencia artificial para desarrollar sitios web siguiendo standares y buenas practicas de las tecnologias Frontend. Mi trabajo incluye el desarrollo de cualquier asset como: imagenes, graficas animadas, iconos, logos, diseño web, etc."
                 icon="bot"
               />
 
@@ -63,7 +63,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Escribo y organizo contexto para que la IA genere código limpio, que sigue criterios y buenas practicas del desarrollo web.
+                        Organizo y suministro a una inteligencia artificial toda la informacion necesaria para que el codigo que genere sea coherente, siga standares conocidos y sus alucinaciones sean minimas.
                       </Text>
                       <Link href="/desarrollo-contexto" style={{ marginTop: "auto" }}>
                         <Button variant="secondary">Ver ejemplos</Button>
@@ -95,7 +95,7 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para generar sitios web personalizados de acuerdo al estilo y necesidad de mi cliente. Esto incluye logotipos, imágenes, gráficas animadas, diseño y conexión con servicios externos.
+                        Dirigo a una inteligencia artificial para generar sitios web personalizados. Esto incluye backends serverless para conectar con servicios externos.
                       </Text>
 
                       <Link href="/soy-frontend" style={{ marginTop: "auto" }}>
@@ -128,15 +128,13 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar a mi cliente que las alucinaciones se eliminaron y que los errores de sistema se hayan reducido al mínimo a la hora que un usuario haga uso del sitio web.
+                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar la eliminacion de cualquier alucinacion en el codigo y que los errores de sistema se hayan reducido al mínimo.
                       </Text>
                     </Stack>
                   </Card.Body>
                 </Card>
               </Grid>
             </Stack>
-
-            <Projects />
           </Stack>
         </Container>
       </Section>
