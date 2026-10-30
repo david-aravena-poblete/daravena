@@ -275,7 +275,7 @@ export function ContactPage() {
             </Card.Header>
 
             <Card.Body>
-              <Form
+              {!showAccessForm && <Form
                 onSubmit={handleSubmit}
                 noValidate
               >
@@ -471,9 +471,9 @@ export function ContactPage() {
                     </ErrorMessage>
                   )}
                 </Stack>
-              </Form>
+              </Form>}
 
-              <Stack gap="md">
+              <Stack gap="lg">
                 <Button
                   type="button"
                   variant="secondary"
@@ -481,7 +481,7 @@ export function ContactPage() {
                   onClick={handleToggleAccessForm}
                   aria-expanded={showAccessForm}
                 >
-                  Tengo clave de acceso
+                  {showAccessForm ? "Volver al formulario de contacto" : "Tengo clave de acceso"}
                 </Button>
 
                 {showAccessForm && (
