@@ -29,11 +29,11 @@ export default function LandingPage() {
                 as="h1"
                 size="2xl"
               >
-                Soy desarrollador web potenciado con inteligencia artificial
+                Asesor inmobiliario y programador web
               </Heading>
 
               <Typewriter
-                text="Dirigo a una inteligencia artificial para desarrollar sitios web siguiendo standares y buenas practicas de las tecnologias Frontend. Mi trabajo incluye el desarrollo de cualquier asset como: imagenes, graficas animadas, iconos, logos, diseño web, etc."
+                text="Gestiono propiedades en arriendo, utilizando inteligencia artificial para organizar y optimizar cada etapa del proceso."
                 icon="bot"
               />
 
@@ -54,7 +54,7 @@ export default function LandingPage() {
                         size="xl"
                         lines={2}
                       >
-                        Desarrollo contexto para IA
+                        Búsqueda de propiedades
                       </Heading>
 
                       <Text
