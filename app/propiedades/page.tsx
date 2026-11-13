@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import {
@@ -15,14 +15,27 @@ import styles from "./propiedades.module.css";
 type PropertyVideo = {
   title: string;
   description: string;
+  tiktokUrl?: string;
   youtubeUrl?: string;
 };
 
+// Agrega aquí la URL pública de cada TikTok cuando esté publicado.
 const videos: PropertyVideo[] = [
   { title: "Casa en arriendo", description: "Próximamente: recorrido por una casa disponible." },
   { title: "Departamento en arriendo", description: "Próximamente: recorrido por un departamento disponible." },
   { title: "Nuevas propiedades", description: "Publicaré aquí nuevos recorridos en video." },
 ];
+
+function getTikTokId(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    if (!["www.tiktok.com", "tiktok.com", "m.tiktok.com"].includes(parsed.hostname)) return null;
+    const match = parsed.pathname.match(/^\/@[^/]+\/video\/(\d+)(?:\/)?$/);
+    return match?.[1] ?? null;
+  } catch {
+    return null;
+  }
+}
 
 function getYouTubeId(url: string): string | null {
   try {
@@ -57,20 +70,33 @@ export default function PropiedadesPage() {
 
           <Stack>
             <Heading as="h2" size="xl">Videos de propiedades</Heading>
-            <Text>Conoce los espacios a través de recorridos en YouTube.</Text>
+            <Text>Conoce los espacios a través de recorridos en video.</Text>
             <div className={styles.videoList} aria-label="Videos de propiedades">
               {videos.map((video) => {
-                const id = video.youtubeUrl ? getYouTubeId(video.youtubeUrl) : null;
+                const tiktokId = video.tiktokUrl ? getTikTokId(video.tiktokUrl) : null;
+                const youtubeId = video.youtubeUrl ? getYouTubeId(video.youtubeUrl) : null;
+                const videoUrl = tiktokId ? video.tiktokUrl : youtubeId ? video.youtubeUrl : null;
                 return (
                   <div className={styles.videoItem} key={video.title}>
                     <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                       <Card.Media>
                         <div className={styles.thumbnail}>
-                          {id ? (
-                            <img
-                              src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-                              alt={`Miniatura del video: ${video.title}`}
+                          {tiktokId ? (
+                            <iframe
+                              src={`https://www.tiktok.com/player/v1/${tiktokId}`}
+                              title={`Recorrido de propiedad: ${video.title}`}
                               loading="lazy"
+                              allow="fullscreen"
+                              allowFullScreen
+                              referrerPolicy="strict-origin-when-cross-origin"
+                            />
+                          ) : youtubeId ? (
+                            <iframe
+                              src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+                              title={`Recorrido de propiedad: ${video.title}`}
+                              loading="lazy"
+                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
                             />
                           ) : (
                             <span className={styles.placeholder}>Video próximamente</span>
@@ -81,9 +107,9 @@ export default function PropiedadesPage() {
                         <Stack>
                           <Heading as="h3" size="lg">{video.title}</Heading>
                           <Text>{video.description}</Text>
-                          {id && video.youtubeUrl ? (
-                            <a href={video.youtubeUrl} target="_blank" rel="noopener noreferrer" className={styles.videoLink}>
-                              Ver en YouTube ↗
+                          {videoUrl ? (
+                            <a href={videoUrl} target="_blank" rel="noopener noreferrer" className={styles.videoLink}>
+                              {tiktokId ? "Ver en TikTok ↗" : "Ver en YouTube ↗"}
                             </a>
                           ) : (
                             <Text>Enlace pendiente de publicación</Text>
