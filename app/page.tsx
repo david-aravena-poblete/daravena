@@ -41,7 +41,7 @@ export default function LandingPage() {
                 <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <Card.Media>
                     <Image
-                      src="/images/robot_estudiando.jpg"
+                      src="/images/robot_busqueda.jpg"
                       alt="Ingeniería de prompts"
                       aspect="4:3"
                     />
@@ -61,10 +61,10 @@ export default function LandingPage() {
                         expandable
                         lines={4}
                       >
-                        Organizo y suministro a una inteligencia artificial toda la informacion necesaria para que el codigo que genere sea coherente, siga standares conocidos y sus alucinaciones sean minimas.
+                        Te ayudo a encontrar casas y departamentos en arriendo según tu presupuesto, las comunas que te interesan y lo que necesitas para vivir.
                       </Text>
-                      <Link href="/desarrollo-contexto" style={{ marginTop: "auto" }}>
-                        <Button variant="secondary">Ver ejemplos</Button>
+                      <Link href="#" style={{ marginTop: "auto", alignSelf: "flex-end" }}>
+                        <Button variant="secondary">Ver mas</Button>
                       </Link>
                     </Stack>
                   </Card.Body>
@@ -73,7 +73,7 @@ export default function LandingPage() {
                 <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <Card.Media>
                     <Image
-                      src="/images/frontend-code.jpg"
+                      src="/images/robot_blog.jpg"
                       alt="Ingeniería de prompts"
                       aspect="4:3"
                     />
@@ -86,48 +86,19 @@ export default function LandingPage() {
                         size="xl"
                         lines={2}
                       >
-                        Hago Desarrollo web
+                        Un blog inmobiliario
                       </Heading>
 
                       <Text
                         expandable
                         lines={4}
                       >
-                        Dirigo a una inteligencia artificial para generar sitios web personalizados. Esto incluye backends serverless para conectar con servicios externos.
+                        Comparto investigaciones que realizo con Deep Research de inteligencia artificial, sobre vivienda, barrios, ciudad y familia.
                       </Text>
 
-                      <Link href="/soy-frontend" style={{ marginTop: "auto" }}>
-                        <Button variant="secondary">Ver ejemplos</Button>
+                      <Link href="#" style={{ marginTop: "auto", alignSelf: "flex-end" }}>
+                        <Button variant="secondary">Ver mas</Button>
                       </Link>
-                    </Stack>
-                  </Card.Body>
-                </Card>
-
-                <Card style={{ height: "100%", display: "flex", flexDirection: "column" }}>
-                  <Card.Media>
-                    <Image
-                      src="/images/frontend-test.jpg"
-                      alt="Frontend developer"
-                      aspect="4:3"
-                    />
-                  </Card.Media>
-
-                  <Card.Body style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                    <Stack style={{ flex: 1 }}>
-                      <Heading
-                        as="h3"
-                        size="xl"
-                        lines={2}
-                      >
-                        Hago testing de codigo
-                      </Heading>
-
-                      <Text
-                        expandable
-                        lines={4}
-                      >
-                        Dirigo a una inteligencia artificial para revisar y corregir el código generado por ella misma. La idea es poder asegurar la eliminacion de cualquier alucinacion en el codigo y que los errores de sistema se hayan reducido al mínimo.
-                      </Text>
                     </Stack>
                   </Card.Body>
                 </Card>

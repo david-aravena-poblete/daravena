@@ -322,7 +322,7 @@ export function ContactPage() {
                     }
                   >
                     <Label required>
-                      ¿Cómo prefieres que te contactemos?
+                      ¿Cómo prefieres que te contacte?
                     </Label>
 
                     <RadioGroup
