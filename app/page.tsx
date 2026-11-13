@@ -63,7 +63,7 @@ export default function LandingPage() {
                       >
                         Te ayudo a encontrar casas y departamentos en arriendo según tu presupuesto, las comunas que te interesan y lo que necesitas para vivir.
                       </Text>
-                      <Link href="#" style={{ marginTop: "auto", alignSelf: "flex-end" }}>
+                      <Link href="/propiedades" style={{ marginTop: "auto", alignSelf: "flex-end" }}>
                         <Button variant="secondary">Ver mas</Button>
                       </Link>
                     </Stack>
