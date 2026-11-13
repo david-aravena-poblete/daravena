@@ -21,7 +21,7 @@ type PropertyVideo = {
 
 // Agrega aquí la URL pública de cada TikTok cuando esté publicado.
 const videos: PropertyVideo[] = [
-  { title: "Casa en arriendo", description: "Próximamente: recorrido por una casa disponible." },
+  { title: "Recorrido en TikTok", description: "Mira este video directamente desde TikTok.", tiktokUrl: "https://www.tiktok.com/@david.aravena.pob/video/7707726432818007304" },
   { title: "Departamento en arriendo", description: "Próximamente: recorrido por un departamento disponible." },
   { title: "Nuevas propiedades", description: "Publicaré aquí nuevos recorridos en video." },
 ];
