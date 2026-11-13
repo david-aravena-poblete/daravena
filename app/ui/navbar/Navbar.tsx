@@ -62,7 +62,7 @@ export function Navbar() {
                 </Text>
 
                 <Text>
-                  Asesor y programador
+                  Asesor inmobiliario
                 </Text>
               </Stack>
             </Inline>
