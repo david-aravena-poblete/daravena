@@ -4,33 +4,38 @@
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1px;
   padding-bottom: var(--space-lg);
 }
 
 .videoItem {
-  flex: 0 0 min(320px, 85vw);
+  flex: 0 0 min(240px, 72vw);
   min-width: 0;
   scroll-snap-align: start;
 }
 
 .thumbnail {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
   background: var(--color-surface-tertiary);
   display: grid;
   place-items: center;
   overflow: hidden;
 }
 
-.thumbnail img {
+.thumbnail img,
+.thumbnail iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 0;
 }
 
 .placeholder {
   color: var(--color-text-secondary);
   font-size: var(--font-sm);
+  text-align: center;
+  padding: var(--space-lg);
 }
 
 .videoLink {
@@ -45,14 +50,11 @@
 
 @media (max-width: 640px) {
   .videoList {
-    flex-direction: column;
-    overflow-x: visible;
-    scroll-snap-type: none;
-    padding-bottom: 0;
+    gap: var(--space-lg);
+    scroll-padding-inline: 1px;
   }
 
   .videoItem {
-    flex: 0 0 auto;
-    width: 100%;
+    flex: 0 0 min(260px, 78vw);
   }
 }
