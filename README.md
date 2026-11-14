@@ -20,10 +20,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 La ruta `/privado` requiere una clave personal. Configura estas variables en el servidor (en `.env.local` para desarrollo o en el entorno del despliegue):
 
-- `PRIVATE_ACCESS_PASSWORD`: clave personal aleatoria de 32 a 256 caracteres.
+- `PRIVATE_ACCESS_PASSWORD`: clave personal aleatoria de 32 a 256 caracteres en producción. Con `npm run dev` puedes usar una clave local más corta.
 - `PRIVATE_SESSION_SECRET`: un secreto aleatorio distinto, de al menos 32 caracteres, para firmar la sesión.
 
-Puedes ejecutar `openssl rand -hex 32` una vez para cada variable. Guarda la clave personal en tu gestor de contraseñas. La sesión dura ocho horas y el cambio de cualquiera de las dos variables invalida las sesiones anteriores.
+Puedes ejecutar `openssl rand -hex 32` una vez para cada variable. Guarda la clave personal en tu gestor de contraseñas. Reinicia el servidor local después de actualizar `.env.local`. La sesión dura ocho horas y el cambio de cualquiera de las dos variables invalida las sesiones anteriores.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

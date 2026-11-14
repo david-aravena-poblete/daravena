@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 async function handleSignIn(formData: FormData) {
   "use server";
 
-  const signedIn = startPrivateSession(formData.get("password"));
-  redirect(signedIn ? "/privado" : "/privado?error=acceso");
+  const result = startPrivateSession(formData.get("password"));
+  redirect(result === "ok" ? "/privado" : `/privado?error=${result}`);
 }
 
 async function handleSignOut() {
@@ -55,6 +55,9 @@ export default function PrivatePage({
                     maxLength={256}
                     required
                   />
+                  {searchParams.error === "configuracion" && (
+                    <p role="alert">El acceso privado no está configurado correctamente en el servidor.</p>
+                  )}
                   {searchParams.error === "acceso" && (
                     <p role="alert">No se pudo iniciar sesión. Revisa la clave e inténtalo nuevamente.</p>
                   )}

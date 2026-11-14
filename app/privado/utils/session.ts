@@ -8,7 +8,11 @@ function getCredentials() {
   const password = process.env.PRIVATE_ACCESS_PASSWORD;
   const secret = process.env.PRIVATE_SESSION_SECRET;
 
-  if (!password || password.length < 32 || !secret || secret.length < 32) {
+  const minimumPasswordLength = process.env.NODE_ENV === "development" ? 1 : 32;
+  if (
+    !password || password.length < minimumPasswordLength || password.length > 256 ||
+    !secret || secret.length < 32
+  ) {
     return null;
   }
 
@@ -39,14 +43,17 @@ export function hasPrivateSession() {
 
 export function startPrivateSession(password: FormDataEntryValue | null) {
   const credentials = getCredentials();
-  if (!credentials || typeof password !== "string" || password.length > 256) {
-    return false;
+  if (!credentials) {
+    return "configuracion";
+  }
+  if (typeof password !== "string" || password.length > 256) {
+    return "acceso";
   }
 
   const submitted = createHash("sha256").update(password).digest();
   const expected = createHash("sha256").update(credentials.password).digest();
   if (!timingSafeEqual(submitted, expected)) {
-    return false;
+    return "acceso";
   }
 
   const expiresAt = String(Math.floor(Date.now() / 1000) + sessionLifetime);
@@ -60,7 +67,7 @@ export function startPrivateSession(password: FormDataEntryValue | null) {
     maxAge: sessionLifetime,
   });
 
-  return true;
+  return "ok";
 }
 
 export function clearPrivateSession() {
