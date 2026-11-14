@@ -30,22 +30,6 @@ import {
 
 export function ContactPage() {
   const router = useRouter();
-  const [showAccessForm, setShowAccessForm] = useState(false);
-  const [accessKey, setAccessKey] = useState("");
-
-  const handleToggleAccessForm = () => {
-    setShowAccessForm((previous) => !previous);
-  };
-
-  const handleAccessKeyChange = (value: string) => {
-    setAccessKey(value);
-  };
-
-  const handleAccessSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // La validación de la clave se incorporará cuando se defina el servicio.
-  };
-
   const [formData, setFormData] =
     useState<ContactFormData>({
       name: "",
@@ -275,7 +259,7 @@ export function ContactPage() {
             </Card.Header>
 
             <Card.Body>
-              {!showAccessForm && <Form
+              <Form
                 onSubmit={handleSubmit}
                 noValidate
               >
@@ -471,34 +455,7 @@ export function ContactPage() {
                     </ErrorMessage>
                   )}
                 </Stack>
-              </Form>}
-
-              <Stack gap="lg">
-                <Button
-                  type="button"
-                  variant="secondary"
-                  fullWidth
-                  onClick={handleToggleAccessForm}
-                  aria-expanded={showAccessForm}
-                >
-                  {showAccessForm ? "Volver al formulario de contacto" : "Tengo clave de acceso"}
-                </Button>
-
-                {showAccessForm && (
-                  <Form onSubmit={handleAccessSubmit}>
-                    <FormField>
-                      <Label required>Clave de acceso</Label>
-                      <Input
-                        type="password"
-                        placeholder="Ingresa tu clave de acceso"
-                        value={accessKey}
-                        onChange={(event) => handleAccessKeyChange(event.target.value)}
-                        required
-                      />
-                    </FormField>
-                  </Form>
-                )}
-              </Stack>
+              </Form>
             </Card.Body>
           </Card>
         </Container>
