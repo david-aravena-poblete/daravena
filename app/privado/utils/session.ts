@@ -8,9 +8,8 @@ function getCredentials() {
   const password = process.env.PRIVATE_ACCESS_PASSWORD;
   const secret = process.env.PRIVATE_SESSION_SECRET;
 
-  const minimumPasswordLength = process.env.NODE_ENV === "development" ? 1 : 32;
   if (
-    !password || password.length < minimumPasswordLength || password.length > 256 ||
+    !password || password.length > 256 ||
     !secret || secret.length < 32
   ) {
     return null;
