@@ -34,11 +34,8 @@ export default function PrivatePage({
     <Section>
       <Container size="sm">
         <Card>
-          <Card.Header>
+          <Stack gap="md">
             <Heading as="h1">Área privada</Heading>
-          </Card.Header>
-
-          <Card.Body>
             {signedIn ? (
               <form action={handleSignOut}>
                 <Stack gap="md">
@@ -65,7 +62,7 @@ export default function PrivatePage({
                 </Stack>
               </form>
             )}
-          </Card.Body>
+          </Stack>
         </Card>
       </Container>
     </Section>
