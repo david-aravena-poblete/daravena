@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Button, Card, Container, Heading, Section, Stack, Text } from "@tefi/design-system";
+import { Button, Card, Container, Heading, Section, Stack } from "@tefi/design-system";
 
+import ClientsDashboard from "./clientes/ClientsDashboard";
+import { listClients } from "./clientes/store";
 import { clearPrivateSession, hasPrivateSession, startPrivateSession } from "./utils/session";
 
 export const metadata: Metadata = {
@@ -23,12 +25,35 @@ async function handleSignOut() {
   redirect("/privado");
 }
 
-export default function PrivatePage({
+export default async function PrivatePage({
   searchParams,
 }: {
   searchParams: { error?: string | string[] };
 }) {
-  const signedIn = hasPrivateSession();
+  if (hasPrivateSession()) {
+    const clients = await listClients().catch((error) => {
+      console.error("No se pudo cargar la lista de clientes.", error);
+      return null;
+    });
+
+    return (
+      <Section>
+        <Container size="lg">
+          <Stack gap="lg">
+            <form action={handleSignOut}>
+              <Button type="submit" variant="secondary">Cerrar sesión</Button>
+            </form>
+            {clients ? <ClientsDashboard clients={clients} /> : (
+              <Card>
+                <Heading as="h1">Clientes</Heading>
+                <p role="alert">No se pudo cargar la lista de clientes. Vuelve a cargar la página para reintentar.</p>
+              </Card>
+            )}
+          </Stack>
+        </Container>
+      </Section>
+    );
+  }
 
   return (
     <Section>
@@ -36,35 +61,26 @@ export default function PrivatePage({
         <Card>
           <Stack gap="md">
             <Heading as="h1">Área privada</Heading>
-            {signedIn ? (
-              <form action={handleSignOut}>
-                <Stack gap="md">
-                  <Text>Sesión iniciada.</Text>
-                  <Button type="submit" variant="secondary">Cerrar sesión</Button>
-                </Stack>
-              </form>
-            ) : (
-              <form action={handleSignIn}>
-                <Stack gap="md">
-                  <label htmlFor="private-password">Clave de acceso</label>
-                  <input
-                    id="private-password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    maxLength={256}
-                    required
-                  />
-                  {searchParams.error === "configuracion" && (
-                    <p role="alert">El acceso privado no está configurado correctamente en el servidor.</p>
-                  )}
-                  {searchParams.error === "acceso" && (
-                    <p role="alert">No se pudo iniciar sesión. Revisa la clave e inténtalo nuevamente.</p>
-                  )}
-                  <Button type="submit" variant="primary">Ingresar</Button>
-                </Stack>
-              </form>
-            )}
+            <form action={handleSignIn}>
+              <Stack gap="md">
+                <label htmlFor="private-password">Clave de acceso</label>
+                <input
+                  id="private-password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  maxLength={256}
+                  required
+                />
+                {searchParams.error === "configuracion" && (
+                  <p role="alert">El acceso privado no está configurado correctamente en el servidor.</p>
+                )}
+                {searchParams.error === "acceso" && (
+                  <p role="alert">No se pudo iniciar sesión. Revisa la clave e inténtalo nuevamente.</p>
+                )}
+                <Button type="submit" variant="primary">Ingresar</Button>
+              </Stack>
+            </form>
           </Stack>
         </Card>
       </Container>

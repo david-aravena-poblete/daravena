@@ -1,0 +1,110 @@
+.dashboard,
+.list,
+.record,
+.editor,
+.confirmation {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.header,
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.list,
+.attributes,
+.editor {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.record h2,
+.attributes {
+  overflow-wrap: anywhere;
+}
+
+.attributes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.attributes dt {
+  font-weight: 600;
+}
+
+.attributes dd {
+  margin: 0.25rem 0 0;
+  white-space: pre-wrap;
+}
+
+.editor {
+  border: 0;
+}
+
+.editor label {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.editor input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #777;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.attributeEditor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0.75rem;
+}
+
+.confirmation {
+  border-top: 1px solid #777;
+  padding-top: 0.75rem;
+}
+
+.confirmation p,
+.status,
+.error {
+  margin: 0;
+}
+
+.status:empty {
+  height: 0;
+  margin-top: -1rem;
+}
+
+.error {
+  color: #ffaaaa;
+}
+
+@media (max-width: 640px) {
+  .attributeEditor {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .attributeEditor label {
+    width: 100%;
+  }
+}

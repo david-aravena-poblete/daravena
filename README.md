@@ -25,6 +25,10 @@ La ruta `/privado` requiere una clave personal. Configura estas variables en el 
 
 Puedes ejecutar `openssl rand -hex 32` una vez para cada variable. Guarda la clave personal en tu gestor de contraseñas. Reinicia el servidor local después de actualizar `.env.local`. La sesión dura ocho horas y el cambio de cualquiera de las dos variables invalida las sesiones anteriores.
 
+Al iniciar sesión en `/privado` puedes agregar, editar y eliminar clientes. El nombre es obligatorio y cada cliente puede tener sus propios atributos de texto.
+
+En local, el servidor crea la base SQLite en `.data/clientes.db` al abrir el dashboard. En Vercel, configura `CLIENTS_DATABASE_URL` con la URL de una base libSQL persistente (por ejemplo, Turso) y `CLIENTS_DATABASE_AUTH_TOKEN` con su token en el entorno del servidor. La tabla se crea al abrir el dashboard por primera vez. Si despliegas en un servidor con disco persistente, puedes usar una URL `file:` que apunte a un archivo SQLite de ese volumen.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
