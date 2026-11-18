@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   Avatar,
@@ -16,6 +17,7 @@ import {
 } from "@tefi/design-system";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [theme, setTheme] = useState("dark");
 
   const isDark = theme === "dark";
@@ -72,11 +74,13 @@ export function Navbar() {
             align="center"
             gap="sm"
           >
-            <Link href="/contact">
-              <Button variant="secondary">
-                Contáctame
-              </Button>
-            </Link>
+            {pathname !== "/propiedades" && (
+              <Link href="/contact">
+                <Button variant="secondary">
+                  Contáctame
+                </Button>
+              </Link>
+            )}
 
             <Switch
               size="lg"

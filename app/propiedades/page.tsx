@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   Button,
@@ -60,17 +61,27 @@ export default function PropiedadesPage() {
     <Section>
       <Container>
         <Stack style={{ gap: "var(--section-spacing-md)" }}>
-          <Stack>
-            <Heading as="h1" size="2xl">Búsqueda de propiedades</Heading>
-            <Text>
-              Te ayudo a encontrar casas y departamentos en arriendo según tu
-              presupuesto, las comunas que te interesan y lo que necesitas para vivir.
-            </Text>
-          </Stack>
+          <div className={styles.intro}>
+            <Stack style={{ gap: "var(--space-md)" }}>
+              <Text>
+                Te ayudo a encontrar mucha informacion sobre casas y departamentos en arriendo según tu
+                presupuesto y las comunas que te interesan.
+              </Text>
+              <Link href="/contact" className={styles.contactLink}>
+                <Button variant="secondary">Contáctame</Button>
+              </Link>
+            </Stack>
+            <Image
+              className={styles.introImage}
+              src="/images/robot_trabajando.png"
+              alt=""
+              width={1024}
+              height={1536}
+              sizes="(max-width: 450px) 32vw, (max-width: 640px) 144px, 240px"
+            />
+          </div>
 
           <Stack>
-            <Heading as="h2" size="xl">Videos de propiedades</Heading>
-            <Text>Conoce los espacios a través de recorridos en video.</Text>
             <div className={styles.videoList} aria-label="Videos de propiedades">
               {videos.map((video) => {
                 const tiktokId = video.tiktokUrl ? getTikTokId(video.tiktokUrl) : null;

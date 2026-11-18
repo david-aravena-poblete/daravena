@@ -1,3 +1,18 @@
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.introImage {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 .videoList {
   display: flex;
   gap: var(--space-lg);
@@ -49,6 +64,11 @@
 }
 
 @media (max-width: 640px) {
+  .intro {
+    grid-template-columns: min(32%, 144px) minmax(0, 1fr);
+    gap: var(--space-md);
+  }
+
   .videoList {
     gap: var(--space-lg);
     scroll-padding-inline: 1px;
